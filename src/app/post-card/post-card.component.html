@@ -1,0 +1,15 @@
+<form [formGroup]="createCardForm" (ngSubmit)="submitPokemon()">
+  <label for="price">Price: </label>
+  <input type="text" id="price" formControlName="price">
+  <br>
+  <label for="condition">Condition: </label>
+  <input type="text" id="condition" formControlName="condition">
+  <br>
+  <label for="language">Language: </label>
+  <input type="text" id="language" formControlName="language">
+  <br>
+  <label for="pokemonId">Pokemon Id: </label>
+  <input type="text" id="pokemonId" formControlName="pokemonId">
+  <br>
+  <button type="submit">Post your card</button>
+</form>
