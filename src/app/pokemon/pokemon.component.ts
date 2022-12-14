@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs";
-import {Pokemon} from "../Pokemon.model";
+import {Pokemon} from "../Card";
 import {CardService} from "../card.service";
 
 @Component({
