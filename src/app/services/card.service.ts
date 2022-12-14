@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Pokemon} from "./Card";
+import {Card} from "../model/Card";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
 
+  baseUrl:string = "http://localhost:8080/";
+
   constructor(private httpClient: HttpClient) { }
 
-  getAllPokemon(): Observable<Pokemon[]> {
-    return this.httpClient.get<Pokemon[]>("http://localhost:8080/pokemon/api/getall");
+  getAll(): Observable<Card[]> {
+    return this.httpClient.get<Card[]>(this.baseUrl + "cardmarket/card/getall");
   }
 
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs";
-import {Pokemon} from "../Card";
-import {CardService} from "../card.service";
+import {Card} from "../model/Card";
+import {CardService} from "../services/card.service";
 
 @Component({
   selector: 'app-pokemon',
@@ -10,7 +10,7 @@ import {CardService} from "../card.service";
 })
 export class PokemonComponent implements OnInit {
 
-  pokemonList$: Observable<Pokemon[]> = this.pokemonService.getAllPokemon();
+  pokemonList$: Observable<Card[]> = this.pokemonService.getAll();
 
   constructor(private pokemonService: CardService) { }
 

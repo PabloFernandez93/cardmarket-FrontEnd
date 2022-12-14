@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { PostArticleComponent } from './post-article/post-article.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { PokemonComponent } from './pokemon/pokemon.component';
+import {HttpClientModule} from "@angular/common/http";
+import { PokemoncardComponent } from './card_illustration/pokemoncard/pokemoncard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostArticleComponent,
-    PokemonComponent
+    PokemonComponent,
+    PokemoncardComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]
