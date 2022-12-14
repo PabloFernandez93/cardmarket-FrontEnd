@@ -1,4 +1,4 @@
-<form [formGroup]="articleForm" (ngSubmit)="submitPokemon()">
+<form [formGroup]="articleForm" (ngSubmit)="submitArticle()">
   <label for="price">Price: </label>
   <input type="text" id="price" formControlName="price">
   <br>
@@ -8,8 +8,8 @@
   <label for="language">Language: </label>
   <input type="text" id="language" formControlName="language">
   <br>
-  <label for="pokemonId">Pokemon Id: </label>
-  <input type="text" id="pokemonId" formControlName="pokemonId">
+  <label for="cardId">Card Id: </label>
+  <input type="text" id="cardId" formControlName="cardId">
   <br>
   <button type="submit">Post your card</button>
 </form>

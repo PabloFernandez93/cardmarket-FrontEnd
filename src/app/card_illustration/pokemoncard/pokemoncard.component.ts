@@ -13,7 +13,7 @@ export class PokemoncardComponent implements OnInit {
   cardList$: Observable<Card[]>;
 
   constructor(private cardService:CardService) {
-    this.cardList$ = this.cardService.getAll();
+    this.cardList$ = this.cardService.getallCards();
   }
 
   ngOnInit(): void {

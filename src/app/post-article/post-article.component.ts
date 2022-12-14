@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {ArticleService} from "../services/article.service";
+import {Article} from "../model/Article";
 
 @Component({
-  selector: 'app-article-card',
+  selector: 'app-post-article',
   templateUrl: './post-article.component.html',
   styleUrls: ['./post-article.component.css']
 })
@@ -15,13 +17,21 @@ export class PostArticleComponent implements OnInit {
     cardId: [0]
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private articleService: ArticleService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
 
-  submitPokemon() {
+  submitArticle() {
+    if(this.articleForm.invalid) return;
 
+    const articleBackend: Article = {
+      ...this.articleForm.value,
+    }
+
+    this.articleService.createArticle(articleBackend).subscribe(a => {
+      alert("Article wurde erstellt!");
+    })
   }
 }

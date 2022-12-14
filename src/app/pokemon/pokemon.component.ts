@@ -10,9 +10,9 @@ import {CardService} from "../services/card.service";
 })
 export class PokemonComponent implements OnInit {
 
-  pokemonList$: Observable<Card[]> = this.pokemonService.getAll();
+  cardList$: Observable<Card[]> = this.cardService.getallCards();
 
-  constructor(private pokemonService: CardService) { }
+  constructor(private cardService: CardService) { }
 
   ngOnInit(): void {
   }
