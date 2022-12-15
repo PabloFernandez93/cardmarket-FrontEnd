@@ -10,6 +10,7 @@ import { PokemoncardComponent } from './card_illustration/pokemoncard/pokemoncar
 import { ArticleComponent } from './article/article.component';
 import { TrainercardComponent } from './card_illustration/trainercard/trainercard.component';
 import { EnergycardComponent } from './card_illustration/energycard/energycard.component';
+import { DefaultPipe } from './pipe/default.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EnergycardComponent } from './card_illustration/energycard/energycard.c
     PokemoncardComponent,
     ArticleComponent,
     TrainercardComponent,
-    EnergycardComponent
+    EnergycardComponent,
+    DefaultPipe
   ],
     imports: [
         BrowserModule,
