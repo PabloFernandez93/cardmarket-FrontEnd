@@ -11,10 +11,10 @@ import {Article} from "../model/Article";
 export class PostArticleComponent implements OnInit {
 
   articleForm: FormGroup = this.fb.group({
-    price: [0, [Validators.required, Validators.min(0)]],
+    price: [null, [Validators.required, Validators.min(0)]],
     condition: ['', Validators.required],
     language: ['', Validators.required],
-    cardId: [0]
+    cardId: [null]
   });
 
   constructor(private articleService: ArticleService, private fb: FormBuilder) { }
