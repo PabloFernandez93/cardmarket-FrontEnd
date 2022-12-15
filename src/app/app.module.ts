@@ -11,6 +11,7 @@ import { ArticleComponent } from './article/article.component';
 import { TrainercardComponent } from './card_illustration/trainercard/trainercard.component';
 import { EnergycardComponent } from './card_illustration/energycard/energycard.component';
 import { DefaultPipe } from './pipe/default.pipe';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DefaultPipe } from './pipe/default.pipe';
     ArticleComponent,
     TrainercardComponent,
     EnergycardComponent,
-    DefaultPipe
+    DefaultPipe,
+    HomepageComponent
   ],
     imports: [
         BrowserModule,
