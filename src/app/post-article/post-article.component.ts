@@ -14,7 +14,9 @@ export class PostArticleComponent implements OnInit {
     price: [0, [Validators.required, Validators.min(0)]],
     condition: ['', Validators.required],
     language: ['', Validators.required],
-    cardId: [0]
+    card: this.fb.group({
+      id: [0]
+    })
   });
 
   constructor(private articleService: ArticleService, private fb: FormBuilder) { }
@@ -34,4 +36,9 @@ export class PostArticleComponent implements OnInit {
       alert("Article wurde erstellt!");
     })
   }
+
+  addCardId(id:number):void {
+    this.articleForm.get("card")?.get("id")?.setValue(id);
+  }
+
 }

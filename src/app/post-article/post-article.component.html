@@ -8,8 +8,11 @@
   <label for="language">Language: </label>
   <input type="text" id="language" formControlName="language">
   <br>
-  <label for="cardId">Card Id: </label>
-  <input type="text" id="cardId" formControlName="cardId">
+  <ng-container formGroupName="card">
+    <label for="cardId">Card Id: </label>
+    <input type="text" id="cardId" formControlName="id">
+  </ng-container>
   <br>
   <button type="submit">Post your card</button>
 </form>
+{{articleForm.value | json}}
