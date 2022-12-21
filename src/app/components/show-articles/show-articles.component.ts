@@ -15,7 +15,7 @@ export class ShowArticlesComponent implements OnInit {
   constructor(private articleService: ArticleService, private route: ActivatedRoute, private cardService: CardService) {
   }
 
-  article?: Article;
+  // article?: Article;
   articleList: Article[] = [];
 
 

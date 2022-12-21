@@ -7,6 +7,6 @@ export interface Article {
   price: number
   condition: string
   language: Language
-  cardId: Card
+  card: Card
 
 }
