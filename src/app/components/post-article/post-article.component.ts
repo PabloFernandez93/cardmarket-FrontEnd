@@ -5,6 +5,7 @@ import {Article} from "../../model/Article";
 import {ActivatedRoute} from "@angular/router";
 import {Language} from "../../model/Language";
 import {LiteralArray} from "@angular/compiler";
+import {Condition} from "../../model/Condition";
 
 @Component({
   selector: 'app-post-article',
@@ -17,7 +18,7 @@ export class PostArticleComponent implements OnInit {
 
   articleForm: FormGroup = this.fb.group({
     price: [0, [Validators.required, Validators.min(0.01)]],
-    condition: ['', [Validators.required]],
+    condition: [Condition.MINT, [Validators.required]],
     language: [Language.ENGLISH, [Validators.required]],
     card: this.fb.group({
       id: [0]
@@ -53,6 +54,10 @@ export class PostArticleComponent implements OnInit {
 
   get languageEnum() {
     return Object.keys(Language).filter(key => isNaN(Number(key)));
+  }
+
+  get conditionEnum() {
+    return Object.keys(Condition).filter(key => isNaN(Number(key)));
   }
 
 

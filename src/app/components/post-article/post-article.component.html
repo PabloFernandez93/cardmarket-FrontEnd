@@ -10,8 +10,10 @@
 
   <br>
 
-  <label for="condition">Condition: </label>
-  <input type="text" id="condition" formControlName="condition">
+  <label>Condition</label>
+  <select formControlName="condition">
+    <option *ngFor="let condition of conditionEnum | keyvalue" [value]="condition.key">{{condition.value}}</option>
+  </select>
 
   <br>
 
