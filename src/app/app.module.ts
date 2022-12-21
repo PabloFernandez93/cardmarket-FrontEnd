@@ -9,6 +9,7 @@ import { ArticleComponent } from './components/article/article.component';
 import { DefaultPipe } from './pipe/default.pipe';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ShowArticlesComponent } from './components/show-articles/show-articles.component';
+import { UpdateArticleComponent } from './components/update-article/update-article.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ShowArticlesComponent } from './components/show-articles/show-articles.
     ArticleComponent,
     DefaultPipe,
     HomepageComponent,
-    ShowArticlesComponent
+    ShowArticlesComponent,
+    UpdateArticleComponent
   ],
     imports: [
         BrowserModule,

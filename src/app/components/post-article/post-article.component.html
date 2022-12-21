@@ -10,13 +10,17 @@
 
   <br>
 
-  <label for="condition">Condition: </label>
-  <input type="text" id="condition" formControlName="condition">
+  <label>Condition</label>
+  <select formControlName="condition">
+    <option *ngFor="let condition of conditionEnum | keyvalue" [value]="condition.key">{{condition.value}}</option>
+  </select>
 
   <br>
 
-  <label for="language">Language: </label>
-  <input type="text" id="language" formControlName="language">
+  <label>Language</label>
+  <select formControlName="language">
+    <option *ngFor="let language of languageEnum | keyvalue" [value]="language.key">{{language.value}}</option>
+  </select>
 
   <br>
 
@@ -27,7 +31,7 @@
 
   <br>
 
-  <button type="submit">Post your card</button>
+  <button type="submit" [disabled]="articleForm.invalid">Post your card</button>
 </form>
 
 <!--{{articleForm.value | json}}-->
