@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validator, Validators} from "@angular/forms";
 import {ArticleService} from "../../services/article.service";
 import {Article} from "../../model/Article";
 import {ActivatedRoute} from "@angular/router";
 import {Language} from "../../model/Language";
 import {LiteralArray} from "@angular/compiler";
 import {Condition} from "../../model/Condition";
+import {CardService} from "../../services/card.service";
+import {Card} from "../../model/Card";
 
 @Component({
   selector: 'app-post-article',
@@ -14,22 +16,28 @@ import {Condition} from "../../model/Condition";
 })
 export class PostArticleComponent implements OnInit {
 
-  // language: string[] = Object.values(Language);
+  cards?: Card[];
+
+  mySelectedCard?: Card;
 
   articleForm: FormGroup = this.fb.group({
-    price: [0, [Validators.required, Validators.min(0.01)]],
+    price: [null, [Validators.required, Validators.min(0.01)]],
     condition: [Condition.MINT, [Validators.required]],
     language: [Language.ENGLISH, [Validators.required]],
-    card: this.fb.group({
-      id: [0]
-    })
+    // card: this.fb.group({
+    //   name: ['', [Validators.required]]
+    // })
   });
 
-  constructor(private articleService: ArticleService, private fb: FormBuilder, private route: ActivatedRoute) { }
+  constructor(private cardService: CardService, private articleService: ArticleService, private fb: FormBuilder, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.cardService.getAllCards().subscribe(cards => this.cards = cards)
   }
 
+  get priceControl() {
+    return this.articleForm.get("price")
+  }
 
   submitArticle() {
     if(this.articleForm.invalid) return;
@@ -39,7 +47,7 @@ export class PostArticleComponent implements OnInit {
     }
 
     this.articleService.createArticle(articleBackend).subscribe(a => {
-      alert("Article wurde erstellt!");
+      alert("Added Article to sell");
     })
   }
 
@@ -47,9 +55,8 @@ export class PostArticleComponent implements OnInit {
     this.articleForm.get("card")?.get("id")?.setValue(id);
   }
 
-  get
-  selectedType() {
-    return this.articleForm?.value.card
+  selectedCard(card: Card) {
+    this.mySelectedCard = card;
   }
 
   get languageEnum() {

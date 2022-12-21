@@ -1,37 +1,54 @@
-<img *ngIf="selectedType?.imgUrl; else emptyImg" [src]="selectedType.imgUrl" style="width: 20em; height: 20em">
+<ng-container>
+  <select id="choose card">
+    <option value="" disabled selected hidden>Choose your card...</option>
+    <option *ngFor="let card of cards" (click)="selectedCard(card)">{{card.name}}</option>
+  </select>
+</ng-container>
+
+<br>
+<br>
+
+<ng-container *ngIf="mySelectedCard">
+<img *ngIf="mySelectedCard?.image; else emptyImg" [src]="mySelectedCard.image" style="width: 10.9em; height: 15em">
 <ng-template #emptyImg>
   <img src="assets/empty-picture.jpg" style="width: 20em; height: 20em">
 </ng-template>
 
+<br>
+<br>
+
 <form [formGroup]="articleForm" (ngSubmit)="submitArticle()">
 
   <label for="price">Price: </label>
-  <input type="text" id="price" formControlName="price">
+  <input type="number" id="price" formControlName="price" [ngClass]="{'error': priceControl?.invalid}">
+  <div style="color: red; font-family: 'Bauhaus 93'" *ngIf="priceControl?.errors?.['min']">price invalid!</div>
 
   <br>
+  <br>
 
-  <label>Condition</label>
+  <label>Condition: </label>
   <select formControlName="condition">
     <option *ngFor="let condition of conditionEnum | keyvalue" [value]="condition.key">{{condition.value}}</option>
   </select>
 
   <br>
+  <br>
 
-  <label>Language</label>
+  <label>Language: </label>
   <select formControlName="language">
     <option *ngFor="let language of languageEnum | keyvalue" [value]="language.key">{{language.value}}</option>
   </select>
 
   <br>
 
-  <ng-container formGroupName="card">
-    <label for="cardId">Card Id: </label>
-    <input type="text" id="cardId" formControlName="id">
-  </ng-container>
+<!--  <ng-container formGroupName="card">-->
+<!--    <label for="cardId">Card Id: </label>-->
+<!--    <input type="text" id="cardId" formControlName="id">-->
+<!--  </ng-container>-->
 
   <br>
 
   <button type="submit" [disabled]="articleForm.invalid">Post your card</button>
 </form>
-
+</ng-container>
 <!--{{articleForm.value | json}}-->
