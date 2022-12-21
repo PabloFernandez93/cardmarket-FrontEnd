@@ -42,7 +42,7 @@
   <br>
 
 <!--  <ng-container formGroupName="card">-->
-<!--    <label for="cardId">Card Id: </label>-->
+<!--    <label for="cardId"></label>-->
 <!--    <input type="text" id="cardId" formControlName="id">-->
 <!--  </ng-container>-->
 
@@ -51,4 +51,6 @@
   <button type="submit" [disabled]="articleForm.invalid">Post your card</button>
 </form>
 </ng-container>
-<!--{{articleForm.value | json}}-->
+{{articleForm.value | json}}
+
+

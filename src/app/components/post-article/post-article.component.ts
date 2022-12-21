@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validator, Validators} from "@angular/forms";
+import {Form, FormArray, FormBuilder, FormControl, FormGroup, Validator, Validators} from "@angular/forms";
 import {ArticleService} from "../../services/article.service";
 import {Article} from "../../model/Article";
 import {ActivatedRoute} from "@angular/router";
@@ -24,9 +24,9 @@ export class PostArticleComponent implements OnInit {
     price: [null, [Validators.required, Validators.min(0.01)]],
     condition: [Condition.MINT, [Validators.required]],
     language: [Language.ENGLISH, [Validators.required]],
-    // card: this.fb.group({
-    //   name: ['', [Validators.required]]
-    // })
+    card: this.fb.group({
+      id: ['0', [Validators.required]]
+    })
   });
 
   constructor(private cardService: CardService, private articleService: ArticleService, private fb: FormBuilder, private route: ActivatedRoute) { }
@@ -42,8 +42,12 @@ export class PostArticleComponent implements OnInit {
   submitArticle() {
     if(this.articleForm.invalid) return;
 
+
+
+
     const articleBackend: Article = {
       ...this.articleForm.value,
+
     }
 
     this.articleService.createArticle(articleBackend).subscribe(a => {
@@ -57,6 +61,8 @@ export class PostArticleComponent implements OnInit {
 
   selectedCard(card: Card) {
     this.mySelectedCard = card;
+
+    this.articleForm.controls['id'].setValue(this.mySelectedCard?.id);
   }
 
   get languageEnum() {
