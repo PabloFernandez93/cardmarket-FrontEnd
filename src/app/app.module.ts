@@ -8,6 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { ArticleComponent } from './components/article/article.component';
 import { DefaultPipe } from './pipe/default.pipe';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { ShowArticlesComponent } from './components/show-articles/show-articles.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     PostArticleComponent,
     ArticleComponent,
     DefaultPipe,
-    HomepageComponent
+    HomepageComponent,
+    ShowArticlesComponent
   ],
     imports: [
         BrowserModule,
