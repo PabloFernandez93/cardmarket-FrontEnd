@@ -3,6 +3,8 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ArticleService} from "../../services/article.service";
 import {Article} from "../../model/Article";
 import {ActivatedRoute} from "@angular/router";
+import {Language} from "../../model/Language";
+import {LiteralArray} from "@angular/compiler";
 
 @Component({
   selector: 'app-post-article',
@@ -11,12 +13,12 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class PostArticleComponent implements OnInit {
 
-
+  // language: string[] = Object.values(Language);
 
   articleForm: FormGroup = this.fb.group({
-    price: [0, [Validators.required, Validators.min(0)]],
-    condition: ['', Validators.required],
-    language: ['', Validators.required],
+    price: [0, [Validators.required, Validators.min(0.01)]],
+    condition: ['', [Validators.required]],
+    language: [Language.ENGLISH, [Validators.required]],
     card: this.fb.group({
       id: [0]
     })
@@ -48,5 +50,10 @@ export class PostArticleComponent implements OnInit {
   selectedType() {
     return this.articleForm?.value.card
   }
+
+  get languageEnum() {
+    return Object.keys(Language).filter(key => isNaN(Number(key)));
+  }
+
 
 }
