@@ -1,1 +1,9 @@
-<p>show-articles works!</p>
+<div *ngFor="let article of articleList">
+  <h4>Article:</h4>
+  <li>
+    <ul>Price:{{article.price}} </ul>
+    <ul>Condition: {{article.condition}} </ul>
+    <ul>Language:{{article.language}}</ul>
+    <ul>Card Id: {{article.cardId.id}}</ul>
+  </li>
+</div>

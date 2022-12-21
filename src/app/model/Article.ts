@@ -1,4 +1,5 @@
 import {Language} from "./Language";
+import {Card} from "./Card";
 
 export interface Article {
 
@@ -6,6 +7,6 @@ export interface Article {
   price: number
   condition: string
   language: Language
-  cardId: number
+  cardId: Card
 
 }
