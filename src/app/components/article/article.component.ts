@@ -9,28 +9,10 @@ import {ArticleService} from "../../services/article.service";
 })
 export class ArticleComponent implements OnInit {
 
-  article?: Article;
 
-  articleList: Article[] = [];
 
-  constructor(private articleSerice: ArticleService) { }
+  ngOnInit() {
 
-  ngOnInit(): void {
-    this.getArticle()
   }
 
-  getArticle() {
-    this.articleSerice.getallArticles().subscribe(article => this.articleList = article)
-  }
-
-  getArticlebyId(index: number) {
-    this.articleSerice.getArticlebyId(index).subscribe(article => console.log(article))
-  }
-
-
-  deleteArticleById(index: number) {
-    this.articleSerice.deleteArticleById(index)
-      .subscribe(result => {console.log(result)
-      })
-  }
 }
