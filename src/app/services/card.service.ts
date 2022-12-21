@@ -8,16 +8,16 @@ import {Card} from "../model/Card";
 })
 export class CardService {
 
-  baseUrl:string = "http://localhost:8080/cardmarket/card";
+  baseUrl: string = "http://localhost:8080/cardmarket/cards";
 
   constructor(private httpClient: HttpClient) { }
 
-  getallCards(): Observable<Card[]> {
-    return this.httpClient.get<Card[]>(this.baseUrl + "/getall");
+  getAllCards(): Observable<Card[]> {
+    return this.httpClient.get<Card[]>(this.baseUrl);
   }
 
   getCardbyId(id: number): Observable<Card> {
-    return this.httpClient.get<Card>(this.baseUrl + "/getcard/" + id)
+    return this.httpClient.get<Card>(this.baseUrl + id)
   }
 
 

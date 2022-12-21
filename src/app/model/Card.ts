@@ -7,5 +7,6 @@ export interface Card {
   availability: number
   cardSet: string
   rarity: number
+  image: string
 
 }
