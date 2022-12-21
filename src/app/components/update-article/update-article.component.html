@@ -1,0 +1,30 @@
+<form [formGroup]="articleForm" (ngSubmit)="updateArticle()">
+  <label for="id">Id: </label>
+  <input type="text" id="id" formControlName="id">
+
+  <br>
+
+  <label for="price">Price: </label>
+  <input type="text" id="price" formControlName="price">
+
+  <br>
+
+  <label for="condition">Condition: </label>
+  <input type="text" id="condition" formControlName="condition">
+
+  <br>
+
+  <label for="language">Language: </label>
+  <input type="text" id="language" formControlName="language">
+
+  <br>
+
+  <ng-container formGroupName="card">
+    <label for="cardId">Card Id: </label>
+    <input type="text" id="cardId" formControlName="id">
+  </ng-container>
+
+  <br>
+
+  <button type="submit">Post your card</button>
+</form>
