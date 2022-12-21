@@ -11,6 +11,8 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class PostArticleComponent implements OnInit {
 
+
+
   articleForm: FormGroup = this.fb.group({
     price: [0, [Validators.required, Validators.min(0)]],
     condition: ['', Validators.required],
@@ -40,6 +42,11 @@ export class PostArticleComponent implements OnInit {
 
   addCardId(id:number):void {
     this.articleForm.get("card")?.get("id")?.setValue(id);
+  }
+
+  get
+  selectedType() {
+    return this.articleForm?.value.card
   }
 
 }
