@@ -28,4 +28,8 @@ export class ArticleService {
   deleteArticleById (id: number): Observable<Article[]> {
     return this.httpClient.delete<Article[]>(this.baseUrl + "/delete/" + id);
   }
+
+  updateArticle(article: Article): Observable<Article> {
+    return this.httpClient.put<Article>(this.baseUrl, article);
+  }
 }
