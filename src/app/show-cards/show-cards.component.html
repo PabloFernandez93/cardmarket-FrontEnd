@@ -1,8 +1,7 @@
   <input class="form-control me-2" type="text" placeholder="Search a card" aria-label="Search"
-         [(ngModel)]=
-           "filter">
-<ul>
+         [(ngModel)]="filter">
 
+<ul>
   <li *ngFor="let card of filterCards(cardList)">
     <a>Name: {{card.name}}</a>
     <a> Type: {{card.type}}</a>
