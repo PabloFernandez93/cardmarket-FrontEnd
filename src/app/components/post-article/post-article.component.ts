@@ -24,9 +24,6 @@ export class PostArticleComponent implements OnInit {
     price: [null, [Validators.required, Validators.min(0.01)]],
     condition: [Condition.MINT, [Validators.required]],
     language: [Language.ENGLISH, [Validators.required]],
-    card: this.fb.group({
-      id: ['0', [Validators.required]]
-    })
   });
 
   constructor(private cardService: CardService, private articleService: ArticleService, private fb: FormBuilder, private route: ActivatedRoute) { }
@@ -42,14 +39,12 @@ export class PostArticleComponent implements OnInit {
   submitArticle() {
     if(this.articleForm.invalid) return;
 
-
-
-
     const articleBackend: Article = {
       ...this.articleForm.value,
-
+      card: this.mySelectedCard
     }
 
+    console.log(articleBackend)
     this.articleService.createArticle(articleBackend).subscribe(a => {
       alert("Added Article to sell");
     })
@@ -61,8 +56,6 @@ export class PostArticleComponent implements OnInit {
 
   selectedCard(card: Card) {
     this.mySelectedCard = card;
-
-    this.articleForm.controls['id'].setValue(this.mySelectedCard?.id);
   }
 
   get languageEnum() {
