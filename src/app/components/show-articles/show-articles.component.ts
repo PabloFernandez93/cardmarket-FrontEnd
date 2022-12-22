@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ArticleService} from "../../services/article.service";
 import {ActivatedRoute} from "@angular/router";
 import {Article} from "../../model/Article";
-import {CardService} from "../../services/card.service";
-
 
 @Component({
   selector: 'app-show-articles',
@@ -12,7 +10,7 @@ import {CardService} from "../../services/card.service";
 })
 export class ShowArticlesComponent implements OnInit {
 
-  constructor(private articleService: ArticleService, private route: ActivatedRoute, private cardService: CardService) {
+  constructor(private articleService: ArticleService, private route: ActivatedRoute) {
   }
 
   // article?: Article;
