@@ -1,0 +1,12 @@
+  <input class="form-control me-2" type="text" placeholder="Search a card" aria-label="Search"
+         [(ngModel)]=
+           "filter">
+<ul>
+
+  <li *ngFor="let card of filterCards(cardList)">
+    <a>Name: {{card.name}}</a>
+    <a> Type: {{card.type}}</a>
+    <a> Availability: {{card.availability}}</a>
+    <img [src]="card.image" alt="Pokemon image">
+  </li>
+</ul>
