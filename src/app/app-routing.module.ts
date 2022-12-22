@@ -5,6 +5,7 @@ import {ShowArticlesComponent} from "./components/show-articles/show-articles.co
 import {ErrorPageComponent} from "./error-page/error-page.component";
 import {HomepageComponent} from "./components/homepage/homepage.component";
 
+
 const routes: Routes = [
   {path: "", redirectTo: "home", pathMatch: "full"},
   {path: "home", component: HomepageComponent},
