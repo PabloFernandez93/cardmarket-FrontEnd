@@ -12,5 +12,9 @@
     <li>Price: {{article.price}}</li>
     <li>Condition: {{article.condition}}</li>
     <li>Language: {{article.language}}</li>
+    <button type="button" (click)="openUpdateForm()">Edit</button>
+    <button type="button" (click)="deleteArticle(article.id)">Delete</button>
   </ul>
 </div>
+
+<app-update-article *ngIf="openUpdateFormBool" [mySelectedArticle]="article"></app-update-article>

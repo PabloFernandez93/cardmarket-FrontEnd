@@ -10,7 +10,7 @@
 
 
 <ul>
-  <li *ngFor="let article of articleList">
+  <li *ngFor="let article of articleList" class="list-style">
     <img *ngIf="article.card.image; else emptyImg" [src]="article.card.image" [routerLink]="['/article-details', article.id]" style="width: 10.9em; height: 15em">
 
   <ng-template #emptyImg>

@@ -50,9 +50,6 @@ export class PostArticleComponent implements OnInit {
     })
   }
 
-  addCardId(id:number):void {
-    this.articleForm.get("card")?.get("id")?.setValue(id);
-  }
 
   selectedCard(card: Card) {
     this.mySelectedCard = card;

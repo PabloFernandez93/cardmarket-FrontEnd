@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ArticleService} from "../../services/article.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
 import {Article} from "../../model/Article";
+import {Condition} from "../../model/Condition";
+import {Language} from "../../model/Language";
+import {Card} from "../../model/Card";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-update-article',
@@ -11,32 +15,48 @@ import {Article} from "../../model/Article";
 })
 export class UpdateArticleComponent implements OnInit {
 
-  constructor(private articleService: ArticleService, private fb: FormBuilder, private route: ActivatedRoute) { }
+  constructor(private articleService: ArticleService, private fb: FormBuilder, private route: ActivatedRoute, private location: Location) { }
+
+  @Input()
+  mySelectedArticle?: Article;
 
   ngOnInit(): void {
   }
 
   articleForm: FormGroup = this.fb.group({
-    id: [0],
-    price: [0, [Validators.required, Validators.min(0)]],
-    condition: ['', Validators.required],
-    language: ['', Validators.required],
-    card: this.fb.group({
-      id: [0]
-    })
+    price: [null, [Validators.required, Validators.min(0.01)]],
+    condition: [Condition.MINT, [Validators.required]],
+    language: [Language.ENGLISH, [Validators.required]],
   });
 
   updateArticle() {
-    if (this.articleForm.invalid) return;
+    if(this.articleForm.invalid) return;
 
     const articleBackend: Article = {
-      ...this.articleForm.value
+      ...this.mySelectedArticle,
+      ...this.articleForm.value,
+      // card: this.mySelectedArticle?.card,
+      // id: this.mySelectedArticle?.id
     }
 
-    this.articleService.updateArticle(articleBackend).subscribe(val => {
-      alert("Article was updated!")
+    console.log(articleBackend)
+    this.articleService.updateArticle(articleBackend).subscribe(a => {
+      alert("Article updated");
+      this.location.back();
     })
 
+  }
+
+  get languageEnum() {
+    return Object.keys(Language).filter(key => isNaN(Number(key)));
+  }
+
+  get conditionEnum() {
+    return Object.keys(Condition).filter(key => isNaN(Number(key)));
+  }
+
+  get priceControl() {
+    return this.articleForm.get("price")
   }
 
 }
