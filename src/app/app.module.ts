@@ -10,6 +10,8 @@ import { DefaultPipe } from './pipe/default.pipe';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ShowArticlesComponent } from './components/show-articles/show-articles.component';
 import { UpdateArticleComponent } from './components/update-article/update-article.component';
+import { FooterComponent } from './footer/footer.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { UpdateArticleComponent } from './components/update-article/update-artic
     DefaultPipe,
     HomepageComponent,
     ShowArticlesComponent,
-    UpdateArticleComponent
+    UpdateArticleComponent,
+    FooterComponent,
+    ErrorPageComponent
   ],
     imports: [
         BrowserModule,
