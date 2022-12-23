@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ArticleService} from "../../services/article.service";
 import {ActivatedRoute} from "@angular/router";
 import {Article} from "../../model/Article";
-import {Card} from "../../model/Card";
+
 
 @Component({
   selector: 'app-show-articles',

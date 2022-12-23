@@ -1,22 +1,15 @@
-<!--<input class="form-control me-2" type="text" placeholder="Search an Article" aria-label="Search"-->
-<!--       [(ngModel)]="filter">-->
+<input class="form-control me-2" type="text" placeholder="Search an Article" aria-label="Search"
+       [(ngModel)]="filter">
 
-<!--<div class="container" >-->
-<!--  <div class="row">-->
-
-<!--    <div class="col-sm" *ngFor="let article of filterArticles(articleList)" style="width: 12rem;">-->
-<!--      <button class="card" style="width: 12rem;" [routerLink]="['/article-details', article.id]" >-->
-
-<!--        <img class="card-img-top" src="..." alt="Card image cap" [src]="article.card.image">-->
-<!--        <div class="card-body">-->
-<!--          <h5 class="card-title">{{article.card.name}}</h5>-->
-<!--          <p class="card-text">Type: {{article.card.type}}</p>-->
-<!--          <p class="card-text">Id: {{article.id}}</p>-->
-<!--          <p class="card-text">Price: {{article.price}}</p>-->
-<!--        </div>-->
-
-<!--      </button>-->
-<!--    </div>-->
+<!--<div *ngFor="let article of articleList">-->
+<!--  <h4>Article:</h4>-->
+<!--  <li >-->
+<!--    <ul>Price:{{article.price}} </ul>-->
+<!--    <ul>Condition: {{article.condition}} </ul>-->
+<!--    <ul>Language:{{article.language}}</ul>-->
+<!--    <ul>Card Id: {{article.card.id}}</ul>-->
+<!--  </li>-->
+<!--</div>-->
 
 <!--  </div>-->
 <!--</div>-->
@@ -38,11 +31,10 @@
           <p class="card-text">Price: {{article.price}}</p>
         </div>
 
-      </button>
-    </div>
 
-  </div>
-</div>
+
+
+
 
 
 <!-- Modal -->
@@ -55,7 +47,7 @@
       </div>
       <div class="modal-body">
         s
-        <app-article-details [transferedArticle]="placeholderArticle"></app-article-details>
+        <app-article-details [transferedArticle]="this.placeholderArticle"></app-article-details>
       </div>
       </div>
   </div>
