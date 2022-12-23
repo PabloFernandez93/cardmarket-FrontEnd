@@ -21,7 +21,7 @@
   <div class="row">
 
     <div class="col-sm" *ngFor="let article of filterArticles(articleList)" style="width: 12rem;">
-      <button class="card" style="width: 12rem;" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="transferArticle(article)">
+      <button class="card" style="width: 12rem;" data-bs-toggle="modal" data-bs-target="#exampleModal">
 
         <img class="card-img-top" src="..." alt="Card image cap" [src]="article.card.image">
         <div class="card-body">
@@ -30,6 +30,7 @@
           <p class="card-text">Id: {{article.id}}</p>
           <p class="card-text">Price: {{article.price}}</p>
         </div>
+      </button>
 
 
 
@@ -47,7 +48,7 @@
       </div>
       <div class="modal-body">
         s
-        <app-article-details [transferedArticle]="this.placeholderArticle"></app-article-details>
+        <app-article-details [transferedArticle]="article"></app-article-details>
       </div>
       </div>
   </div>
