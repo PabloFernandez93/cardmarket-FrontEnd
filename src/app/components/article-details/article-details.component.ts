@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Article} from "../../model/Article";
 import {ActivatedRoute} from "@angular/router";
 import {ArticleService} from "../../services/article.service";
@@ -13,6 +13,9 @@ export class ArticleDetailsComponent implements OnInit {
 
   article?: Article;
 
+  @Input()
+  transferedArticle?: Article;
+
   constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService, private location: Location) { }
 
   ngOnInit(): void {
@@ -21,6 +24,7 @@ export class ArticleDetailsComponent implements OnInit {
       this.articleService.getArticlebyId(Number.parseInt(id))
         .subscribe(article => this.article = article)
     }
+    this.article = this.transferedArticle;
   }
 
   deleteArticle(id: number) {

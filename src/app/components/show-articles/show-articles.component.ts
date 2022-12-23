@@ -49,4 +49,11 @@ export class ShowArticlesComponent implements OnInit {
     }
     return articles.filter(article => article.card.name.toLowerCase().includes(this.filter.toLowerCase()))
   }
+
+  placeholderArticle?: Article;
+
+  transferArticle(article: Article) {
+    this.placeholderArticle = article;
+    console.log("transferedarticle:" + this.placeholderArticle)
+  }
 }
