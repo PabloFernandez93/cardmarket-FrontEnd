@@ -1,10 +1,1 @@
-.card:hover {
-  box-shadow: 20px 20px 80px -44px #0000;
-  transition: .5s ease-in-out;
-  cursor: pointer;
-}
 
-.mt-3 {
-  display: flex;
-  align-content: center;
-}

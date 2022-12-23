@@ -30,7 +30,7 @@
       </div>
     </--section-->
 
-  <div class="mt-3" *ngFor="let card of filterCards(cardList)">
+  <!--div class="mt-3" *ngFor="let card of filterCards(cardList)">
     <div class="container">
       <div class="row">
         <div class="col-md-3">
@@ -46,4 +46,30 @@
       </div>
     </div>
     </div>
-  </div>
+  </div-->
+
+
+  <!--div class="row" *ngFor="let card of filterCards(cardList)">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <img class="card-img-top img-fluid" [src]="card.image">
+          <h4 class="card-title">{{card.name}}</h4>
+          <p class="card-text">Type: {{card.type}}</p>
+          <p class="card-text">Availability: {{card.availability}}</p>
+          <a href="#" class="btn btn-primary">Buy now</a>
+        </div>
+      </div>
+    </div-->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm" *ngFor="let card of filterCards(cardList)">
+          <img class="card-img-top img-fluid" [src]="card.image">
+          <h4 class="card-title">{{card.name}}</h4>
+          <p class="card-text">Type: {{card.type}}</p>
+          <p class="card-text">Availability: {{card.availability}}</p>
+          <a href="#" class="btn btn-primary">Buy now</a>
+        </div>
+      </div>
+    </div>
