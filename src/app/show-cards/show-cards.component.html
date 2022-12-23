@@ -1,11 +1,49 @@
   <input class="form-control me-2" type="text" placeholder="Search a card" aria-label="Search"
          [(ngModel)]="filter">
 
-<ul>
+<!--ul>
   <li *ngFor="let card of filterCards(cardList)">
     <a>Name: {{card.name}}</a>
     <a> Type: {{card.type}}</a>
     <a> Availability: {{card.availability}}</a>
     <img [src]="card.image" alt="Pokemon image">
   </li>
-</ul>
+</--ul-->
+
+
+  <!--section class="container mt-4 d-flex mb-5" >
+    <div  class="row" >
+      <div class="col-md-4 mt-5">
+        <div class="card">
+          <div *ngFor="let card of filterCards(cardList)">
+          <img [src]="card.image" alt="Pokemon image" class="card-img-top w-100"/>
+          <div class="card-body">
+            <h2 class="card-title">{{card.name}}</h2>
+            <div class="d-flex justify-content-between">
+              <p class="card-text">{{card.type}}</p>
+              <p class="card-text mr-4 text-success">{{card.availability}}</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    </--section-->
+
+  <div class="mt-3" *ngFor="let card of filterCards(cardList)">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card shadow-lg">
+            <img [src]="card.image" alt="" class="img-fluid">
+            <div class="card-body">
+              <p class="h3">{{card.name}}</p>
+              <p>Type: {{card.type}}</p>
+              <p>Availability: {{card.availability}}</p>
+              <button class="btn btn-danger btn-sm">Buy now</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
