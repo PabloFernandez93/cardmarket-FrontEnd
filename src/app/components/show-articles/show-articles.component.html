@@ -14,7 +14,7 @@
 
 <ul>
   <li *ngFor="let article of filterArticles(articleList)" class="list-style">
-    <img *ngIf="article.card.image; else emptyImg" [src]="article.card.image" [routerLink]="['/article-details']" style="width: 10.9em; height: 15em">
+    <img *ngIf="article.card.image; else emptyImg" [src]="article.card.image" [routerLink]="['/article-details', article.id]" style="width: 10.9em; height: 15em">
 
   <ng-template #emptyImg>
     <img src="assets/empty-picture.jpg" style="width: 30em; height: 30em">
