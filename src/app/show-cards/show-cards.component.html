@@ -83,7 +83,7 @@
           <h5 class="card-title">{{card.name}}</h5>
           <p class="card-text">Type: {{card.type}}</p>
           <p class="card-text">Availability: <b>{{card.availability}}</b></p>
-          <a href="#" class="btn btn-primary">Buy now</a>
+          <a href="#" class="btn btn-primary" [routerLink]="['/show-article', card.name]">Show Articles</a>
         </div>
       </div>
     </div>
