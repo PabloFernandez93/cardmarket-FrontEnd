@@ -66,10 +66,10 @@
       <div class="row">
         <div class="col-sm" *ngFor="let card of filterCards(cardList)">
           <img class="card-img-top img-fluid" [src]="card.image">
-          <h4 class="card-title">{{card.name}}</h4>
+          <b class="card-title">{{card.name}}</b>
           <p class="card-text">Type: {{card.type}}</p>
-          <p class="card-text">Availability: {{card.availability}}</p>
-          <a href="#" class="btn btn-primary">Buy now</a>
+          <p class="card-text">Availability: <b>{{card.availability}}</b></p>
+          <button class="btn btn-primary btn-sm">Buy now</button>
         </div>
       </div>
     </div>
