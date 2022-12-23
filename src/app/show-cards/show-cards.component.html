@@ -62,14 +62,30 @@
       </div>
     </div-->
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm" *ngFor="let card of filterCards(cardList)">
-          <img class="card-img-top img-fluid" [src]="card.image">
-          <b class="card-title">{{card.name}}</b>
+<!--    <div class="container">-->
+<!--      <div class="row">-->
+<!--        <div class="col-sm" *ngFor="let card of filterCards(cardList)">-->
+<!--          <img class="card-img-top img-fluid" [src]="card.image">-->
+<!--          <b class="card-title">{{card.name}}</b>-->
+<!--          <p class="card-text">Type: {{card.type}}</p>-->
+<!--          <p class="card-text">Availability: <b>{{card.availability}}</b></p>-->
+<!--          <button class="btn btn-primary btn-sm">Buy now</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm" *ngFor="let card of filterCards(cardList)">
+      <div class="card" style="width: 12rem;">
+        <img class="card-img-top" src="..." alt="Card image cap" [src]="card.image">
+        <div class="card-body">
+          <h5 class="card-title">{{card.name}}</h5>
           <p class="card-text">Type: {{card.type}}</p>
           <p class="card-text">Availability: <b>{{card.availability}}</b></p>
-          <button class="btn btn-primary btn-sm">Buy now</button>
+          <a href="#" class="btn btn-primary">Buy now</a>
         </div>
       </div>
     </div>
+  </div>
+</div>
