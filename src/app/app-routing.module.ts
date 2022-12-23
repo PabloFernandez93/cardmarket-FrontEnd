@@ -5,7 +5,7 @@ import {ShowArticlesComponent} from "./components/show-articles/show-articles.co
 import {ErrorPageComponent} from "./error-page/error-page.component";
 import {HomepageComponent} from "./components/homepage/homepage.component";
 import {ArticleDetailsComponent} from "./components/article-details/article-details.component";
-import {ShowCardsComponent} from "./show-cards/show-cards.component";
+import {ShowCardsComponent} from "./components/show-cards/show-cards.component";
 
 
 const routes: Routes = [

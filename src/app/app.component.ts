@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ShowCardsComponent} from "./show-cards/show-cards.component";
+import { ShowCardsComponent} from "./components/show-cards/show-cards.component";
 
 @Component({
   selector: 'app-root',

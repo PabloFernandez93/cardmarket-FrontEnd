@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {CardService} from "../services/card.service";
-import {Card} from "../model/Card";
+import {CardService} from "../../services/card.service";
+import {Card} from "../../model/Card";
 
 @Component({
   selector: 'app-show-cards',
