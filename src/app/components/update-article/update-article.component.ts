@@ -24,7 +24,7 @@ export class UpdateArticleComponent implements OnInit {
   }
 
   articleForm: FormGroup = this.fb.group({
-    price: [null, [Validators.required, Validators.min(0.01)]],
+    price: [this.mySelectedArticle?.price, [Validators.required, Validators.min(0.01)]],
     condition: [Condition.MINT, [Validators.required]],
     language: [Language.ENGLISH, [Validators.required]],
   });
@@ -42,7 +42,8 @@ export class UpdateArticleComponent implements OnInit {
     console.log(articleBackend)
     this.articleService.updateArticle(articleBackend).subscribe(a => {
       alert("Article updated");
-      this.location.back();
+      window.location.assign('http://localhost:4200/show-articles')
+
     })
 
   }

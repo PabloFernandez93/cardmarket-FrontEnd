@@ -13,7 +13,7 @@
 
 <!--  </div>-->
 <!--</div>-->
-<!--<p id="helptool">*Tipp: you can click on an article for further action</p>-->
+<p id="helptool">*Tipp: you can click on an article for further action</p>
 
 <!--test-->
 
@@ -21,7 +21,7 @@
   <div class="row">
 
     <div class="col-sm" *ngFor="let article of filterArticles(articleList)" style="width: 12rem;">
-      <button class="card" style="width: 12rem;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button class="card" style="width: 12rem;" (click)="transferArticle(article)"  data-bs-toggle="modal" data-bs-target="#updateArticleModal">
 
         <img class="card-img-top" src="..." alt="Card image cap" [src]="article.card.image">
         <div class="card-body">
@@ -31,25 +31,22 @@
           <p class="card-text">Price: {{article.price}}</p>
         </div>
       </button>
+    </div>
+  </div>
+</div>
 
 
-
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateArticleModal" tabindex="-1" aria-labelledby="updateArticleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="updateArticleModalLabel">Pokemon Details</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        s
-        <app-article-details [transferedArticle]="article"></app-article-details>
+        <app-article-details [transferedArticle]="placeholderArticle"></app-article-details>
       </div>
-      </div>
+    </div>
   </div>
 </div>
+

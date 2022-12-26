@@ -24,7 +24,7 @@ export class ShowArticlesComponent implements OnInit {
   }
 
   getArticle() {
-    this.articleService.getallArticles().subscribe(article => this.articleList = article);
+    this.articleService.getallArticles().subscribe(articles => this.articleList = articles);
 
   }
 
@@ -40,7 +40,6 @@ export class ShowArticlesComponent implements OnInit {
         console.log(result)
       })
   }
-
    */
 
   filterArticles(articles: Article[]) {
@@ -54,6 +53,8 @@ export class ShowArticlesComponent implements OnInit {
 
   transferArticle(article: Article) {
     this.placeholderArticle = article;
-    console.log("transferedarticle:" + this.placeholderArticle)
+    console.log("transferedarticle:" + article.id)
   }
+
+
 }
