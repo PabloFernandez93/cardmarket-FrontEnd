@@ -21,7 +21,7 @@
   <div class="row">
 
     <div class="col-sm" *ngFor="let article of filterArticles(articleList)" style="width: 12rem;">
-      <button class="card" style="width: 12rem;" (click)="transferArticle(article)"  data-bs-toggle="modal" data-bs-target="#updateArticleModal">
+      <button class="card" id="buttondetails" style="width: 12rem;" (click)="transferArticle(article)"  data-bs-toggle="modal" data-bs-target="#updateArticleModal">
 
         <img class="card-img-top" src="..." alt="Card image cap" [src]="article.card.image">
         <div class="card-body">
@@ -40,7 +40,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="updateArticleModalLabel">Pokemon Details</h1>
+        <h1 class="modal-title fs-5" id="updateArticleModalLabel">Pokemoncard-Details</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
