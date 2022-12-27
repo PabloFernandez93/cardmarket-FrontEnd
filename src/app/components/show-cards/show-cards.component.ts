@@ -16,7 +16,7 @@ export class ShowCardsComponent implements OnInit {
   // card?: Card;
   cardList: Card[] = [];
   filter: string = '';
-
+  makeCardSelected: boolean = false;
 
 
   ngOnInit(): void {
@@ -32,5 +32,9 @@ export class ShowCardsComponent implements OnInit {
       return cards;
     }
     return cards.filter(card => card.name.toLowerCase().includes(this.filter.toLowerCase()))
+  }
+
+  switchMakeCardSelected() {
+    this.makeCardSelected = !this.makeCardSelected;
   }
 }

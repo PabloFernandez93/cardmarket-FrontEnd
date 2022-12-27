@@ -1,0 +1,22 @@
+<p>Show Article</p>
+
+<input *ngIf="isCardSelected" class="form-control me-2" type="text" placeholder="Search an Article" aria-label="Search"
+       [(ngModel)]="filter">
+
+<div class="container" *ngIf="isCardSelected">
+  <div class="row">
+
+    <div class="col-sm" *ngFor="let article of filterArticles(articleList)" style="width: 12rem;">
+<!--      <button class="card" style="width: 12rem;" (click)="transferArticle(article)"  data-bs-toggle="modal" data-bs-target="#updateArticleModal">-->
+
+        <img class="card-img-top" src="..." alt="Card image cap" [src]="article.card.image">
+        <div class="card-body">
+          <h5 class="card-title">{{article.card.name}}</h5>
+          <p class="card-text">Type: {{article.card.type}}</p>
+          <p class="card-text">Id: {{article.id}}</p>
+          <p class="card-text">Price: {{article.price}}</p>
+        </div>
+<!--      </button>-->
+    </div>
+  </div>
+</div>

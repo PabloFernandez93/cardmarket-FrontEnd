@@ -6,6 +6,7 @@ import {ErrorPageComponent} from "./error-page/error-page.component";
 import {HomepageComponent} from "./components/homepage/homepage.component";
 import {ArticleDetailsComponent} from "./components/article-details/article-details.component";
 import {ShowCardsComponent} from "./components/show-cards/show-cards.component";
+import {BuyArticleComponent} from "./components/buy-article/buy-article.component";
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: "show-articles", component: ShowArticlesComponent},
   {path: "article-details/:id", component: ArticleDetailsComponent},
   {path: "show-cards", component: ShowCardsComponent},
+  {path: "buy-article", component: BuyArticleComponent},
   {path: "**", component: ErrorPageComponent },
 
 ];
