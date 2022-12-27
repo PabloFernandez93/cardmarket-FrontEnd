@@ -17,7 +17,7 @@ export class BuyArticleComponent implements OnInit {
   selectedCardName?: String;
 
   @Input()
-  isCardSelected: boolean = false;
+  isCardSelected?: boolean;
 
   constructor(private articleService: ArticleService) { }
 

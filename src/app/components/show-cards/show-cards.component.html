@@ -83,7 +83,7 @@
           <h5 class="card-title">{{card.name}}</h5>
           <p class="card-text">Type: {{card.type}}</p>
           <p class="card-text">Availability: <b>{{card.availability}}</b></p>
-          <app-buy-article href="#" class="btn btn-primary" [selectedCardName]="card.name" [isCardSelected]="makeCardSelected" (click)="switchMakeCardSelected()" [routerLink]="['/buy-article']">Show Articles</app-buy-article>
+          <app-buy-article href="#" class="btn btn-primary" [selectedCardName]="card.name"  (click)="switchMakeCardSelected()" [isCardSelected]="makeCardSelected" [routerLink]="['/buy-article']">Show Articles</app-buy-article>
         </div>
       </div>
     </div>
