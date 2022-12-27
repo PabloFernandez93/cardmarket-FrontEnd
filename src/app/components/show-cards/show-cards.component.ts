@@ -33,8 +33,4 @@ export class ShowCardsComponent implements OnInit {
     }
     return cards.filter(card => card.name.toLowerCase().includes(this.filter.toLowerCase()))
   }
-
-  switchMakeCardSelected() {
-    this.makeCardSelected = !this.makeCardSelected;
-  }
 }
