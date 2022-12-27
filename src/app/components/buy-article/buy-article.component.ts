@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Card} from "../../model/Card";
 import {ArticleService} from "../../services/article.service";
 import {Article} from "../../model/Article";
@@ -14,15 +14,23 @@ export class BuyArticleComponent implements OnInit {
   filter: string = '';
 
   @Input()
-  selectedCardName?: String;
+  selectedCardName: string = '';
 
-  @Input()
-  isCardSelected?: boolean;
+  // @Input()
+  isCardSelected?: boolean = false;
 
   constructor(private articleService: ArticleService) { }
 
   ngOnInit(): void {
     this.articleService.getallArticles().subscribe(articles => this.articleList = articles);
+
+    // if (this.selectedCardName == '') {
+    //   this.isCardSelected = false;
+    // } else {
+    //   this.isCardSelected = true;
+    // }
+
+    // this.filter = this.selectedCardName
   }
 
   filterArticles(articles: Article[]) {
@@ -30,5 +38,10 @@ export class BuyArticleComponent implements OnInit {
       return articles;
     }
     return articles.filter(article => article.card.name.toLowerCase().includes(this.filter.toLowerCase()))
+  }
+
+  switchIsCardSelectedOn(value: string) {
+    this.isCardSelected = !this.isCardSelected;
+    this.filter = value;
   }
 }
