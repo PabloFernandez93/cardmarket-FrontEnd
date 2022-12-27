@@ -1,7 +1,8 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Card} from "../../model/Card";
+import {Component, Input, OnInit} from '@angular/core';
 import {ArticleService} from "../../services/article.service";
 import {Article} from "../../model/Article";
+import {ActivatedRoute} from "@angular/router";
+import {Card} from "../../model/Card";
 
 @Component({
   selector: 'app-buy-article',
@@ -11,37 +12,34 @@ import {Article} from "../../model/Article";
 export class BuyArticleComponent implements OnInit {
 
   articleList: Article[] = [];
-  filter: string = '';
 
   @Input()
-  selectedCardName: string = '';
+  selectedCard?: Card;
 
-  // @Input()
-  isCardSelected?: boolean = false;
+  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService) {
 
-  constructor(private articleService: ArticleService) { }
+  }
 
   ngOnInit(): void {
-    this.articleService.getallArticles().subscribe(articles => this.articleList = articles);
+    if (this.selectedCard) {
+      this.getArticle()
 
-    // if (this.selectedCardName == '') {
-    //   this.isCardSelected = false;
-    // } else {
-    //   this.isCardSelected = true;
-    // }
+      console.log(this.articleList)
 
-    // this.filter = this.selectedCardName
-  }
 
-  filterArticles(articles: Article[]) {
-    if (!this.filter) {
-      return articles;
+      this.articleList.filter(article => article.card.id == this.selectedCard?.id)
+
+
+      console.log(this.articleList)
     }
-    return articles.filter(article => article.card.name.toLowerCase().includes(this.filter.toLowerCase()))
+
   }
 
-  switchIsCardSelectedOn(value: string) {
-    this.isCardSelected = !this.isCardSelected;
-    this.filter = value;
+
+
+  getArticle() {
+    this.articleService.getAllArticles().subscribe(articles => this.articleList = articles);
+
   }
+
 }

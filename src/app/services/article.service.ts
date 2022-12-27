@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Card} from "../model/Card";
 import {Article} from "../model/Article";
 
 @Injectable({
@@ -13,11 +12,11 @@ export class ArticleService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getallArticles(): Observable<Article[]> {
+  getAllArticles(): Observable<Article[]> {
     return this.httpClient.get<Article[]>(this.baseUrl);
   }
 
-  getArticlebyId(id: number): Observable<Article> {
+  getArticleById(id: number): Observable<Article> {
     return this.httpClient.get<Article>(this.baseUrl + "/" + id)
   }
 
@@ -31,5 +30,9 @@ export class ArticleService {
 
   updateArticle(article: Article): Observable<Article> {
     return this.httpClient.put<Article>(this.baseUrl, article);
+  }
+
+  getArticlesByCardId(id: number | undefined): Observable<Article[]> {
+    return this.httpClient.get<Article[]>(this.baseUrl+ "/all/" + id);
   }
 }

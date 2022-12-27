@@ -1,21 +1,24 @@
-
-.container {
-  margin-bottom: 70px;
+#buttondetails {
+  border: none;
 }
 
-.card-title {
-  font-size: small;
-}
+/*.container {*/
+/*  margin-bottom: 70px;*/
+/*}*/
 
-.card-text {
-  font-size: small;
-}
+/*.card-title {*/
+/*  font-size: small;*/
+/*}*/
 
-.card-img-top img-fluid {
-  width: 200px;
-  height: 200px;
-}
+/*.card-text {*/
+/*  font-size: small;*/
+/*}*/
 
-.btn btn-primary {
-  font-size: 0.5em;
-}
+/*.card-img-top img-fluid {*/
+/*  width: 200px;*/
+/*  height: 200px;*/
+/*}*/
+
+/*.btn btn-primary {*/
+/*  font-size: 0.5em;*/
+/*}*/

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ShowCardsComponent} from "./components/show-cards/show-cards.component";
+
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,9 @@ import { ShowCardsComponent} from "./components/show-cards/show-cards.component"
 })
 export class AppComponent {
   title = 'Pokemon-Market';
+
+
+
+
+
 }

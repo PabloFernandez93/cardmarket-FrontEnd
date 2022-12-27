@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ContentChildren, OnInit, QueryList} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {CardService} from "../../services/card.service";
 import {Card} from "../../model/Card";
+import {BuyArticleComponent} from "../buy-article/buy-article.component";
 
 @Component({
   selector: 'app-show-cards',
@@ -10,13 +11,15 @@ import {Card} from "../../model/Card";
 })
 export class ShowCardsComponent implements OnInit {
 
+  @ContentChildren(BuyArticleComponent)
+  tabs: QueryList<BuyArticleComponent> | undefined
+
   constructor(private route: ActivatedRoute, private cardService: CardService) {
   }
 
-  // card?: Card;
   cardList: Card[] = [];
   filter: string = '';
-  makeCardSelected: boolean = false;
+
 
 
   ngOnInit(): void {
@@ -24,13 +27,21 @@ export class ShowCardsComponent implements OnInit {
   }
 
   getCards() {
-    this.cardService.getAllCards().subscribe(card => this.cardList = card);
-  }
+    this.cardService.getAllCards().subscribe(card =>
+      this.cardList = card)
+            }
 
   filterCards(cards: Card[]) {
     if (!this.filter) {
       return cards;
     }
     return cards.filter(card => card.name.toLowerCase().includes(this.filter.toLowerCase()))
+  }
+
+  placeholderCard?: Card;
+
+  transferCard(card: Card) {
+    this.placeholderCard = card;
+    console.log("Selected Card-Id:" + this.placeholderCard.id)
   }
 }
