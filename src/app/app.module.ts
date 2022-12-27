@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ArticleDetailsComponent } from './components/article-details/article-details.component';
 import { ShowCardsComponent } from './components/show-cards/show-cards.component';
+import { BuyArticleComponent } from './components/buy-article/buy-article.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ShowCardsComponent } from './components/show-cards/show-cards.component
     ErrorPageComponent,
     ArticleDetailsComponent,
     ShowCardsComponent,
+    BuyArticleComponent,
   ],
   imports: [
     BrowserModule,
