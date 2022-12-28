@@ -9,11 +9,12 @@ import { DefaultPipe } from './pipe/default.pipe';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ShowArticlesComponent } from './components/show-articles/show-articles.component';
 import { UpdateArticleComponent } from './components/update-article/update-article.component';
-import { FooterComponent } from './footer/footer.component';
-import { ErrorPageComponent } from './error-page/error-page.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { ArticleDetailsComponent } from './components/article-details/article-details.component';
 import { ShowCardsComponent } from './components/show-cards/show-cards.component';
 import { BuyArticleComponent } from './components/buy-article/buy-article.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { BuyArticleComponent } from './components/buy-article/buy-article.compon
     ArticleDetailsComponent,
     ShowCardsComponent,
     BuyArticleComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
