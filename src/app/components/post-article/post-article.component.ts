@@ -21,7 +21,7 @@ export class PostArticleComponent implements OnInit {
   mySelectedCard?: Card;
 
   articleForm: FormGroup = this.fb.group({
-    price: ['', [Validators.required, Validators.min(0.01), Validators.pattern("^[0-9](.[0-9]{2})?$")]],
+    price: ['', [Validators.required, Validators.min(0.01), Validators.pattern("\^([\\d]{0,4})(\\.|$)([\\d]{2,2}|)$")]],
     condition: [Condition.MINT, [Validators.required]],
     language: [Language.ENGLISH, [Validators.required]],
   });
@@ -46,7 +46,7 @@ export class PostArticleComponent implements OnInit {
 
     console.log(articleBackend)
     this.articleService.createArticle(articleBackend).subscribe(a => {
-      alert("Added Article to sell");
+      alert("Added Article " + articleBackend.card.name + " to your Cards");
     })
   }
 
@@ -61,6 +61,4 @@ export class PostArticleComponent implements OnInit {
   get conditionEnum() {
     return Object.keys(Condition).filter(key => isNaN(Number(key)));
   }
-
-
 }

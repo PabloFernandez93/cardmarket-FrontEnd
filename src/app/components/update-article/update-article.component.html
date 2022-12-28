@@ -1,34 +1,30 @@
 <form [formGroup]="articleForm" (ngSubmit)="updateArticle()">
+  <div class="form-group">
 
-  <label for="price">Price: </label>
-  <input type="number" id="price" formControlName="price" [ngClass]="{'error': priceControl?.invalid}">
-  <div style="color: red; font-family: 'Bauhaus 93'" *ngIf="priceControl?.errors?.['min']">price invalid!</div>
+    <div class="col-md-6 mb-3">
+      <label for="price">Price: </label>
+      <input class="form-control" type="text" formControlName="price" id="price">
+      <div *ngIf="priceControl?.touched && priceControl?.invalid" class="alert alert-danger">
+        <div *ngIf="priceControl?.errors?.['min']">Price should be at least 0.01</div>
+        <div *ngIf="priceControl?.errors?.['required']">Enter price.</div>
+        <div *ngIf="priceControl?.errors?.['pattern']">Invalid entry</div>
+      </div>
+    </div>
 
-  <br>
-  <br>
+    <div class="col-md-6 mb-3">
+      <label>Condition: </label>
+      <select formControlName="condition">
+        <option *ngFor="let condition of conditionEnum | keyvalue" [value]="condition.key">{{condition.value}}</option>
+      </select>
+    </div>
 
-  <label>Condition: </label>
-  <select formControlName="condition">
-    <option *ngFor="let condition of conditionEnum | keyvalue" [value]="condition.key">{{condition.value}}</option>
-  </select>
+    <div class="col-md-6 mb-3">
+      <label>Language: </label>
+      <select formControlName="language">
+        <option *ngFor="let language of languageEnum | keyvalue" [value]="language.key">{{language.value}}</option>
+      </select>
+    </div>
 
-  <br>
-  <br>
-
-  <label>Language: </label>
-  <select formControlName="language">
-    <option *ngFor="let language of languageEnum | keyvalue" [value]="language.key">{{language.value}}</option>
-  </select>
-
-  <br>
-
-  <!--  <ng-container formGroupName="card">-->
-  <!--    <label for="cardId"></label>-->
-  <!--    <input type="text" id="cardId" formControlName="id">-->
-  <!--  </ng-container>-->
-
-  <br>
-
-  <button type="submit" [disabled]="articleForm.invalid" >Post your card</button>
-<!--  <button type="submit" [disabled]="articleForm.invalid" onclick="javascript:window.location='http://localhost:4200/show-articles'">Post your card</button>-->
+  <button type="submit" [disabled]="articleForm.invalid" >Update</button>
+  </div>
 </form>
