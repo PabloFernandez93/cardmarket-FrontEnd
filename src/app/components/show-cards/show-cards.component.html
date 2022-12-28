@@ -6,7 +6,7 @@
   <div class="row">
 
     <div class="col-sm" *ngFor="let card of filterCards(cardList)">
-      <button class="card" id="buttondetails" style="width: 12rem;" (click)="transferCard(card)" data-bs-toggle="modal" data-bs-target="#updateArticleModal">
+      <button class="card" id="buttondetails" style="width: 12rem;" (click)="transferCard(card.id)" data-bs-toggle="modal" data-bs-target="#updateArticleModal">
 
         <img class="card-img-top" src="..." alt="Card image cap" [src]="card.image">
         <div class="card-body">
@@ -29,7 +29,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <app-buy-article [selectedCard]="placeholderCard"></app-buy-article>
+          <app-buy-article [selectedCardId]="placeholderCardId"></app-buy-article>
         </div>
       </div>
     </div>

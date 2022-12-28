@@ -38,10 +38,10 @@ export class ShowCardsComponent implements OnInit {
     return cards.filter(card => card.name.toLowerCase().includes(this.filter.toLowerCase()))
   }
 
-  placeholderCard?: Card;
+  placeholderCardId: number = 0
 
-  transferCard(card: Card) {
-    this.placeholderCard = card;
-    console.log("Selected Card-Id:" + this.placeholderCard.id)
+  transferCard(id: number) {
+    this.placeholderCardId = id;
+    console.log("Selected Card-Id:" + this.placeholderCardId)
   }
 }

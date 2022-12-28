@@ -21,7 +21,7 @@
         <div *ngIf="priceControl?.touched && priceControl?.invalid" class="alert alert-danger">
           <div *ngIf="priceControl?.errors?.['min']">Price should be at least 0.01</div>
           <div *ngIf="priceControl?.errors?.['required']">Enter price.</div>
-          <div *ngIf="priceControl?.errors?.['pattern']">Enter only number.</div>
+          <div *ngIf="priceControl?.errors?.['pattern']">Invalid entry</div>
         </div>
       </div>
 

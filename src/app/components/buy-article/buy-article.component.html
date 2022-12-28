@@ -1,6 +1,6 @@
+<button (click)="showArticle()">Show Article</button>
 
-
-<div *ngIf="selectedCard">
+<div *ngIf="selectedCardId">
 
 
 <div class="container">
@@ -10,9 +10,9 @@
         <div class="card-body">
           <h5 class="card-title">{{article.card.name}}</h5>
           <p class="card-text">Type: {{article.card.type}}</p>
-          <p class="card-text">Id: {{article.id}}</p>
-          <p class="card-text">Price: {{article.price | currency:'EUR':true}}</p>
+          <p class="card-text">Price: {{article.price | currency:'EUR':'symbol'}}</p>
           <p class="card-text">Condition: {{article.condition}}</p>
+          <button (click)="buyArticle(article.id)">Buy Article</button>
         </div>
     </div>
   </div>

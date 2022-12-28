@@ -32,7 +32,7 @@ export class ArticleService {
     return this.httpClient.put<Article>(this.baseUrl, article);
   }
 
-  getArticlesByCardId(id: number | undefined): Observable<Article[]> {
+  getArticlesByCardId(id: number): Observable<Article[]> {
     return this.httpClient.get<Article[]>(this.baseUrl+ "/all/" + id);
   }
 }
