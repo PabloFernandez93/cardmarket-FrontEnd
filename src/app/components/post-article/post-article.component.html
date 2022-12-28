@@ -5,7 +5,7 @@
   </select>
 </div>
 
-<ng-container *ngIf="mySelectedCard">
+<div *ngIf="mySelectedCard" class="custom">
 
   <img *ngIf="mySelectedCard?.image; else emptyImg" [src]="mySelectedCard.image" style="width: 10.9em; height: 15em">
   <ng-template #emptyImg>
@@ -43,8 +43,4 @@
 
     </div>
   </form>
-</ng-container>
-
-
-
-{{articleForm.value | json}}
+</div>

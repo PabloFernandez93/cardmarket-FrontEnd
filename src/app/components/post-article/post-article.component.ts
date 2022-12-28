@@ -21,7 +21,7 @@ export class PostArticleComponent implements OnInit {
   mySelectedCard?: Card;
 
   articleForm: FormGroup = this.fb.group({
-    price: ['', [Validators.required, Validators.min(0.01), Validators.pattern(/[0-9]/)]],
+    price: ['', [Validators.required, Validators.min(0.01), Validators.pattern("^[0-9]*$")]],
     condition: [Condition.MINT, [Validators.required]],
     language: [Language.ENGLISH, [Validators.required]],
   });
