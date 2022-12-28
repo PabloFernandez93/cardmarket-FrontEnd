@@ -21,7 +21,7 @@ export class PostArticleComponent implements OnInit {
   mySelectedCard?: Card;
 
   articleForm: FormGroup = this.fb.group({
-    price: [null, [Validators.required, Validators.min(0.01)]],
+    price: ['', [Validators.required, Validators.min(0.01), Validators.pattern(/[0-9]/)]],
     condition: [Condition.MINT, [Validators.required]],
     language: [Language.ENGLISH, [Validators.required]],
   });
@@ -49,7 +49,6 @@ export class PostArticleComponent implements OnInit {
       alert("Added Article to sell");
     })
   }
-
 
   selectedCard(card: Card) {
     this.mySelectedCard = card;
