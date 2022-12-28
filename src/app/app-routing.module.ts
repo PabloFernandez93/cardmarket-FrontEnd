@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {PostArticleComponent} from "./components/post-article/post-article.component";
 import {ShowArticlesComponent} from "./components/show-articles/show-articles.component";
-import {ErrorPageComponent} from "./error-page/error-page.component";
+import {ErrorPageComponent} from "./components/error-page/error-page.component";
 import {HomepageComponent} from "./components/homepage/homepage.component";
 import {ArticleDetailsComponent} from "./components/article-details/article-details.component";
 import {ShowCardsComponent} from "./components/show-cards/show-cards.component";
