@@ -29,7 +29,7 @@
     <img src="assets/empty-picture.jpg" style="width: 30em; height: 30em">
   </ng-template>
   <ul>
-    <li>Price: {{transferedArticle.price}}</li>
+    <li>Price: {{transferedArticle.price | currency:'EUR':true}}</li>
     <li>Condition: {{transferedArticle.condition}}</li>
     <li>Language: {{transferedArticle.language}}</li>
     <button type="button" (click)="openUpdateForm()" >Edit</button>

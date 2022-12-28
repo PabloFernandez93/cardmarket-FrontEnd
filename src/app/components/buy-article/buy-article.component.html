@@ -11,7 +11,7 @@
           <h5 class="card-title">{{article.card.name}}</h5>
           <p class="card-text">Type: {{article.card.type}}</p>
           <p class="card-text">Id: {{article.id}}</p>
-          <p class="card-text">Price: {{article.price}}</p>
+          <p class="card-text">Price: {{article.price | currency:'EUR':true}}</p>
           <p class="card-text">Condition: {{article.condition}}</p>
         </div>
     </div>
