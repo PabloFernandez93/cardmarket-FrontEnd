@@ -2,7 +2,6 @@
 
 <div *ngIf="selectedCardId">
 
-
 <div class="container">
   <div class="row">
     <div class="col-sm" *ngFor="let article of articleList" style="width: 12rem;">
@@ -12,7 +11,7 @@
           <p class="card-text">Type: {{article.card.type}}</p>
           <p class="card-text">Price: {{article.price | currency:'EUR':'symbol'}}</p>
           <p class="card-text">Condition: {{article.condition}}</p>
-          <button (click)="buyArticle(article.id)">Buy Article</button>
+          <button (click)="buyArticle(article.id, article.card.name)">Buy Article</button>
         </div>
     </div>
   </div>

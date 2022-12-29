@@ -16,47 +16,21 @@ export class BuyArticleComponent implements OnInit {
   @Input()
   selectedCardId: number = 0;
 
-  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService) {
+  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService) {}
 
-  }
-
-  ngOnInit(): void {
-    // if (this.selectedCardId) {
-    //   this.getArticle()
-    //
-    //   console.log("Liste: " + this.articleList)
-
-
-    // this.articleList.filter(article => article.card.id == this.selectedCardId)
-
-
-    // console.log(this.articleList)
-    // }
-
-  }
-
-
-  // getArticle() {
-  //   this.articleService.getArticlesByCardId(this.selectedCardId).subscribe(articles => this.articleList = articles);
-  // }
+  ngOnInit(): void {}
 
   showArticle() {
     if (this.selectedCardId) {
       this.articleService.getArticlesByCardId(this.selectedCardId).subscribe(articles => this.articleList = articles)
 
       console.log("Liste: " + this.articleList)
-
-
-      // this.articleList.filter(article => article.card.id == this.selectedCardId)
-
-
-      // console.log(this.articleList)
     }
   }
 
-  buyArticle(id: number) {
+  buyArticle(id: number, name: string) {
     this.articleService.deleteArticleById(id).subscribe(val => {
-      alert("Congratulations! You bought this Article!");
+      alert("Congratulations! You bought " + name.toUpperCase() + "!");
       window.location.assign('http://localhost:4200/show-cards')
     });
   }

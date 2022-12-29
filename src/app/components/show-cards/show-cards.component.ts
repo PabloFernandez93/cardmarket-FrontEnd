@@ -1,8 +1,10 @@
-import {Component, ContentChildren, OnInit, QueryList} from '@angular/core';
+import {Component, ContentChildren, EventEmitter, OnInit, Output, QueryList} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {CardService} from "../../services/card.service";
 import {Card} from "../../model/Card";
 import {BuyArticleComponent} from "../buy-article/buy-article.component";
+import {ArticleService} from "../../services/article.service";
+import {Article} from "../../model/Article";
 
 @Component({
   selector: 'app-show-cards',
@@ -14,13 +16,12 @@ export class ShowCardsComponent implements OnInit {
   @ContentChildren(BuyArticleComponent)
   tabs: QueryList<BuyArticleComponent> | undefined
 
-  constructor(private route: ActivatedRoute, private cardService: CardService) {
+  constructor(private route: ActivatedRoute, private cardService: CardService, private articleService: ArticleService) {
   }
 
+  articleList: Article[] = [];
   cardList: Card[] = [];
   filter: string = '';
-
-
 
   ngOnInit(): void {
     this.getCards();
