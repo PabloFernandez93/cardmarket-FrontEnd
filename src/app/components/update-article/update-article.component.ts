@@ -24,7 +24,7 @@ export class UpdateArticleComponent implements OnInit {
   }
 
   articleForm: FormGroup = this.fb.group({
-    price: [this.mySelectedArticle?.price, [Validators.required, Validators.min(0.01), Validators.pattern("\^([\\d]{0,4})(\\.|$)([\\d]{2,2}|)$")]],
+    price: [this.mySelectedArticle?.price, [Validators.required, Validators.min(0.01), Validators.pattern("\^([\\d]{0,4})(\\.|$)([\\d]{1,2}|)$")]],
     condition: [Condition.MINT, [Validators.required]],
     language: [Language.ENGLISH, [Validators.required]],
   });

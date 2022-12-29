@@ -17,7 +17,7 @@
 
       <div class="col-md-6 mb-3">
         <label for="price">Price: </label>
-        <input class="form-control" type="text" formControlName="price" id="price">
+        <input class="form-control" type="text" formControlName="price" id="price" placeholder="e.G. 14.70">
         <div *ngIf="priceControl?.touched && priceControl?.invalid" class="alert alert-danger">
           <div *ngIf="priceControl?.errors?.['min']">Price should be at least 0.01</div>
           <div *ngIf="priceControl?.errors?.['required']">Enter price.</div>

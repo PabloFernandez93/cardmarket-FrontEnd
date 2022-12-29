@@ -23,14 +23,6 @@ export class BuyArticleComponent implements OnInit {
     }
   }
 
-  // showArticle() {
-  //   if (this.selectedCardId) {
-  //     this.articleService.getArticlesByCardId(this.selectedCardId).subscribe(articles => this.articleList = articles)
-  //
-  //     console.log("Liste: " + this.articleList)
-  //   }
-  // }
-
   buyArticle(id: number, name: string) {
     this.articleService.deleteArticleById(id).subscribe(val => {
       alert("Congratulations! You bought " + name.toUpperCase() + "!");
