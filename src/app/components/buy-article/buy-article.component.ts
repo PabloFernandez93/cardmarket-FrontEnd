@@ -13,20 +13,23 @@ export class BuyArticleComponent implements OnInit {
 
   articleList: Article[] = [];
 
-  @Input()
-  selectedCardId: number = 0;
-
   constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService) {}
 
-  ngOnInit(): void {}
-
-  showArticle() {
-    if (this.selectedCardId) {
-      this.articleService.getArticlesByCardId(this.selectedCardId).subscribe(articles => this.articleList = articles)
-
-      console.log("Liste: " + this.articleList)
+  ngOnInit(): void {
+    const id = this.activatedRoute.snapshot.paramMap.get("id")
+    if (id) {
+      this.articleService.getArticlesByCardId(Number.parseInt(id))
+        .subscribe(articles => this.articleList = articles)
     }
   }
+
+  // showArticle() {
+  //   if (this.selectedCardId) {
+  //     this.articleService.getArticlesByCardId(this.selectedCardId).subscribe(articles => this.articleList = articles)
+  //
+  //     console.log("Liste: " + this.articleList)
+  //   }
+  // }
 
   buyArticle(id: number, name: string) {
     this.articleService.deleteArticleById(id).subscribe(val => {

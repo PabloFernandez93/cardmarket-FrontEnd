@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: "show-articles", component: ShowArticlesComponent},
   {path: "article-details/:id", component: ArticleDetailsComponent},
   {path: "show-cards", component: ShowCardsComponent},
-  {path: "buy-article", component: BuyArticleComponent},
+  {path: "buy-article/:id", component: BuyArticleComponent},
   {path: "**", component: ErrorPageComponent },
 
 ];

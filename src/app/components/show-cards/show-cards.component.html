@@ -1,18 +1,22 @@
-<label class="form-label" for="cardSearch">Enter letters to filter cards by name:</label>
-<input id="cardSearch" class="form-control me-2" type="text" placeholder="Search a card" aria-label="Search" [(ngModel)]="filter">
+<label class="form-label" for="cardSearch">Search Card:</label>
+<input id="cardSearch" class="form-control me-2" type="text" placeholder="Enter..." aria-label="Search" [(ngModel)]="filter">
 
 
 <div class="container">
   <div class="row">
 
     <div class="col-sm" *ngFor="let card of filterCards(cardList)">
-      <button class="card" id="buttondetails" style="width: 12rem;" (click)="transferCard(card.id)" data-bs-toggle="modal" data-bs-target="#updateArticleModal">
+      <button class="card" id="buttondetails" style="width: 12rem;" [routerLink]="['/buy-article', card.id]" data-bs-toggle="modal" data-bs-target="#updateArticleModal">
 
         <img class="card-img-top" src="..." alt="Card image cap" [src]="card.image">
         <div class="card-body">
           <h5 class="card-title">{{card.name}}</h5>
+          <p class="card-text">Set-No.: {{card.serialNumber}}</p>
           <p class="card-text">Type: {{card.type}}</p>
+          <p class="card-text">Rarity: {{card.rarity}}</p>
+          <p class="card-text">From Set: {{card.cardSet}}</p>
           <p class="card-text">Availability: <b>{{card.availability}}</b></p>
+<!--          <app-buy-article [selectedCardId]="placeholderCardId"></app-buy-article>-->
         </div>
       </button>
     </div>
@@ -21,17 +25,17 @@
 
 
 
-  <div class="modal fade" id="updateArticleModal" tabindex="-1" aria-labelledby="updateArticleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="updateArticleModalLabel">Pokemoncard-Details</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <app-buy-article [selectedCardId]="placeholderCardId"></app-buy-article>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--  <div class="modal fade" id="updateArticleModal" tabindex="-1" aria-labelledby="updateArticleModalLabel" aria-hidden="true">-->
+<!--    <div class="modal-dialog">-->
+<!--      <div class="modal-content">-->
+<!--        <div class="modal-header">-->
+<!--          <h1 class="modal-title fs-5" id="updateArticleModalLabel">Pokemoncard-Details</h1>-->
+<!--          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--        </div>-->
+<!--        <div class="modal-body">-->
+<!--          <app-buy-article [selectedCardId]="placeholderCardId"></app-buy-article>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
 
