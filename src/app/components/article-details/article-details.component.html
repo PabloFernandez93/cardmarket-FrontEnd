@@ -1,26 +1,3 @@
-
-
-
-<!--<div *ngIf="article">-->
-
-<!--  <img *ngIf="article.card.image; else emptyImg" [src]="article.card.image" style="width: 10.9em; height: 15em">-->
-
-<!--  <ng-template #emptyImg>-->
-<!--    <img src="assets/empty-picture.jpg" style="width: 30em; height: 30em">-->
-<!--  </ng-template>-->
-<!--  <ul>-->
-<!--    <li>Price: {{article.price}}</li>-->
-<!--    <li>Condition: {{article.condition}}</li>-->
-<!--    <li>Language: {{article.language}}</li>-->
-<!--    <button type="button" (click)="openUpdateForm()" >Edit</button>-->
-<!--    <button type="button" (click)="deleteArticle(article.id)">Delete</button>-->
-<!--  </ul>-->
-<!--</div>-->
-
-<!--<app-update-article *ngIf="openUpdateFormBool" [mySelectedArticle]="article"></app-update-article>-->
-
-
-
 <div *ngIf="transferedArticle">
 
   <img *ngIf="transferedArticle.card.image; else emptyImg" [src]="transferedArticle.card.image" style="width: 10.9em; height: 15em">
@@ -28,12 +5,12 @@
   <ng-template #emptyImg>
     <img src="assets/empty-picture.jpg" style="width: 30em; height: 30em">
   </ng-template>
-  <ul>
+  <ul id="detaillist">
     <li>Price: {{transferedArticle.price | currency:'EUR':'symbol'}}</li>
     <li>Condition: {{transferedArticle.condition}}</li>
     <li>Language: {{transferedArticle.language}}</li>
-    <button type="button" (click)="openUpdateForm()" >Edit</button>
-    <button type="button" (click)="deleteArticle(transferedArticle.id)">Delete</button>
+    <button type="button" id="editbtn" class="btn btn-warning" (click)="openUpdateForm()" >Edit</button>
+    <button type="button" class="btn btn-danger" (click)="deleteArticle(transferedArticle.id)">Delete</button>
   </ul>
 </div>
 

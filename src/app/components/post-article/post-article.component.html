@@ -33,13 +33,13 @@
       </div>
 
       <div class="col-md-6 mb-3">
-        <label>Language: </label>
+        <label>Language:  </label>
         <select formControlName="language">
           <option *ngFor="let language of languageEnum | keyvalue" [value]="language.key">{{language.value}}</option>
         </select>
       </div>
 
-      <button type="submit" [disabled]="articleForm.invalid">Add</button>
+      <button type="submit" class="btn btn-success" [disabled]="articleForm.invalid">Add</button>
 
     </div>
   </form>

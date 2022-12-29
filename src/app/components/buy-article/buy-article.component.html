@@ -11,7 +11,7 @@
           <p class="card-text">Type: {{article.card.type}}</p>
           <p class="card-text">Price: {{article.price | currency:'EUR':'symbol'}}</p>
           <p class="card-text">Condition: {{article.condition}}</p>
-          <button (click)="buyArticle(article.id, article.card.name)">Buy Article</button>
+          <button (click)="buyArticle(article.id, article.card.name)" class="btn btn-success">Buy Article</button>
         </div>
     </div>
   </div>
