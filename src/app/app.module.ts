@@ -31,6 +31,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     ShowCardsComponent,
     BuyArticleComponent,
     NavBarComponent,
+
   ],
   imports: [
     BrowserModule,
