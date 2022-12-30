@@ -1,10 +1,8 @@
 .custom {
-  margin-left: 5em;
-  margin-right: auto;
-  margin-top: 5em;
+  margin: 5em auto 5em 5em;
 }
 
-#errorpika {
+#error-pika {
   margin-left: 5em;
   margin-right: auto;
   margin-top: 5em;

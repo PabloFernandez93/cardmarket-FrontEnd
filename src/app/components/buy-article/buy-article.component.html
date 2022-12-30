@@ -1,46 +1,30 @@
-<!--<button (click)="showArticle()">Show Article</button>-->
-
-<div id="errorpika" *ngIf="articleList.length == 0">
-  <img src="https://i.kym-cdn.com/entries/icons/original/000/027/475/Screen_Shot_2018-10-25_at_11.02.15_AM.png" style="width: 300px; height: 200px">
+<div id="error-pika" *ngIf="articleList.length == 0">
+  <img src="https://i.kym-cdn.com/entries/icons/original/000/027/475/Screen_Shot_2018-10-25_at_11.02.15_AM.png"
+       style="width: 300px; height: 200px" alt="Picture of surprised Pikachu">
   <p>OOPS! There are no articles yet of this card</p>
   <button type="button" class="btn btn-info" (click)="goBack()">Back</button>
 </div>
 
 <div class="custom">
 
-<div class="container">
-  <div class="row">
+  <div class="container">
+    <div class="d-flex flex-row">
 
-    <div class="col-sm" *ngFor="let article of articleList" style="width: 12rem;">
+      <div class="d-flex flex-wrap">
+        <div class="p-2" *ngFor="let article of articleList" style="width: 12rem;">
 
-        <img class="card-img-top" src="..." alt="Card image cap" [src]="article.card.image" style="width: 10.9em; height: 15em">
-        <div class="card-body">
-          <h5 class="card-title">{{article.card.name}}</h5>
-          <p class="card-text">Type: {{article.card.type}}</p>
-          <p class="card-text">Price: {{article.price | currency:'EUR':'symbol'}}</p>
-          <p class="card-text">Condition: {{article.condition}}</p>
-          <button (click)="buyArticle(article.id, article.card.name)" class="btn btn-success">Buy Article</button>
+          <img class="card-img-top col-sm" src="..." alt="Card image cap" [src]="article.card.image"
+               style="width: 10.9em; height: 15em">
+          <div class="card-body">
+            <h5 class="card-title">{{article.card.name}}</h5>
+            <p class="card-text">Type: {{article.card.type}}</p>
+            <p class="card-text">Price: {{article.price | currency:'EUR':'symbol'}}</p>
+            <p class="card-text">Condition: {{article.condition}}</p>
+            <button (click)="buyArticle(article.id, article.card.name)" class="btn btn-success">Buy Article</button>
+          </div>
         </div>
+      </div>
     </div>
   </div>
-</div>
 
 </div>
-
-
-
-<!--<div *ngIf="selectedCard">-->
-
-<!--  <img *ngIf="selectedCard.image; else emptyImg" [src]="selectedCard.image" style="width: 10.9em; height: 15em">-->
-
-<!--  <ng-template #emptyImg>-->
-<!--    <img src="assets/empty-picture.jpg" style="width: 30em; height: 30em">-->
-<!--  </ng-template>-->
-<!--  <ul>-->
-<!--    <li>{{selectedCard.name}}</li>-->
-<!--    <li>Type: {{selectedCard.type}}</li>-->
-<!--    <li></li>-->
-<!--&lt;!&ndash;    <button type="button" (click)="selectedCard()" >Edit</button>&ndash;&gt;-->
-<!--&lt;!&ndash;    <button type="button" (click)="deleteArticle(transferedArticle.id)">Delete</button>&ndash;&gt;-->
-<!--  </ul>-->
-<!--</div>-->

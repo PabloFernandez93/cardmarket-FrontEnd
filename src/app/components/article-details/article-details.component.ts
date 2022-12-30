@@ -1,8 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Article} from "../../model/Article";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {ArticleService} from "../../services/article.service";
-import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-article-details',
@@ -11,22 +10,12 @@ import {Location} from "@angular/common";
 })
 export class ArticleDetailsComponent implements OnInit {
 
-  // article?: Article;
-
   @Input()
-  transferedArticle?: Article;
+  transferredArticle?: Article;
 
-  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService, private location: Location) { }
+  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService) { }
 
-  ngOnInit(): void {
-    // const id = this.activatedRoute.snapshot.paramMap.get("id")
-    // if (id) {
-    //   this.articleService.getArticlebyId(Number.parseInt(id))
-    //     .subscribe(article => this.article = article)
-    // }
-    // this.article = this.transferedArticle;
-    console.log(this.transferedArticle?.id)
-  }
+  ngOnInit(): void {}
 
   deleteArticle(id: number) {
     this.articleService.deleteArticleById(id).subscribe(val => {

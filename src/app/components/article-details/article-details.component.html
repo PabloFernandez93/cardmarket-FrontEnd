@@ -1,19 +1,19 @@
-<div *ngIf="transferedArticle">
+<div *ngIf="transferredArticle">
 
-  <img *ngIf="transferedArticle.card.image; else emptyImg" [src]="transferedArticle.card.image" style="width: 10.9em; height: 15em">
+  <img *ngIf="transferredArticle.card.image; else emptyImg" [src]="transferredArticle.card.image" style="width: 10.9em; height: 15em" alt="Picture of pokemon card">
 
   <ng-template #emptyImg>
-    <img id="detailimg" src="assets/empty-picture.jpg" style="width: 30em; height: 30em">
+    <img src="assets/empty-picture.jpg" style="width: 30em; height: 30em" alt="Empty picture">
   </ng-template>
-  <ul id="detaillist">
-    <li>Price: {{transferedArticle.price | currency:'EUR':'symbol'}}</li>
-    <li>Condition: {{transferedArticle.condition}}</li>
-    <li>Language: {{transferedArticle.language}}</li>
-    <button type="button" id="editbtn" class="btn btn-warning" (click)="openUpdateForm()" >Edit</button>
-    <button type="button" class="btn btn-danger" (click)="deleteArticle(transferedArticle.id)">Delete</button>
+  <ul class="detail-list">
+    <li>Price: {{transferredArticle.price | currency:'EUR':'symbol'}}</li>
+    <li>Condition: {{transferredArticle.condition}}</li>
+    <li>Language: {{transferredArticle.language}}</li>
+    <button type="button" id="edit-btn" class="btn btn-warning" (click)="openUpdateForm()" >Edit</button>
+    <button type="button" class="btn btn-danger" (click)="deleteArticle(transferredArticle.id)">Delete</button>
   </ul>
 </div>
 
-<app-update-article *ngIf="openUpdateFormBool" [mySelectedArticle]="transferedArticle"></app-update-article>
+<app-update-article *ngIf="openUpdateFormBool" [mySelectedArticle]="transferredArticle"></app-update-article>
 
 

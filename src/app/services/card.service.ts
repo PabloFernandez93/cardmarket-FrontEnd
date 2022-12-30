@@ -17,10 +17,6 @@ export class CardService {
     return this.httpClient.get<Card[]>(this.baseUrl);
   }
 
-  getCardbyId(id: number): Observable<Card> {
-    return this.httpClient.get<Card>(this.baseUrl + id)
-  }
-
   getRandomCard(): Observable<Card> {
     return this.httpClient.get<Card>(this.baseUrl + "/random")
   }
