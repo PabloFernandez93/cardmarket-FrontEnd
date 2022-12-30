@@ -35,4 +35,9 @@ export class ShowCardsComponent implements OnInit {
     }
     return cards.filter(card => card.name.toLowerCase().includes(this.filter.toLowerCase()))
   }
+
+  redirect(): boolean {
+    alert("No articles available, redirecting...");
+    return false;
+  }
 }

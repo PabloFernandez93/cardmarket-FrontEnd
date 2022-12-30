@@ -1,14 +1,13 @@
 
 <input id="cardSearch" class="form-control me-2" type="text" placeholder="Search Card" aria-label="Search" [(ngModel)]="filter">
 
-<br>
-<h3>*Click on Card to show available Article</h3>
+<p id="helptool">Click on a card for further actions</p>
 
 <div class="container">
   <div class="row">
 
     <div class="col-sm" *ngFor="let card of filterCards(cardList)">
-      <button class="card" id="buttondetails" style="width: 12rem;" [routerLink]="['/buy-article', card.id]" data-bs-toggle="modal" data-bs-target="#updateArticleModal">
+      <button class="card" id="buttondetails" style="width: 12rem;" [routerLink]="['/buy-article', card.id]" >
 
         <img class="card-img-top" src="..." alt="Card image cap" [src]="card.image">
         <div class="card-body">
@@ -18,8 +17,8 @@
           <p class="card-text">Rarity: {{card.rarity}}</p>
           <p class="card-text">Set: {{card.cardSet}}</p>
           <p class="card-text">Availability: <b>{{card.availability}}</b></p>
-<!--          <app-buy-article [selectedCardId]="placeholderCardId"></app-buy-article>-->
         </div>
+
       </button>
     </div>
   </div>
