@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ArticleService} from "../../services/article.service";
-import {ActivatedRoute} from "@angular/router";
 import {Article} from "../../model/Article";
-
 
 @Component({
   selector: 'app-show-articles',
@@ -11,10 +9,9 @@ import {Article} from "../../model/Article";
 })
 export class ShowArticlesComponent implements OnInit {
 
-  constructor(private articleService: ArticleService, private route: ActivatedRoute) {
+  constructor(private articleService: ArticleService) {
   }
 
-  // article?: Article;
   articleList: Article[] = [];
   filter: string = '';
 
@@ -25,7 +22,6 @@ export class ShowArticlesComponent implements OnInit {
 
   getArticle() {
     this.articleService.getAllArticles().subscribe(articles => this.articleList = articles);
-
   }
 
   filterArticles(articles: Article[]) {
@@ -40,6 +36,4 @@ export class ShowArticlesComponent implements OnInit {
   transferArticle(article: Article) {
     this.placeholderArticle = article;
   }
-
-
 }

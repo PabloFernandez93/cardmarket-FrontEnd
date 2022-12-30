@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {ArticleService} from "../../../services/article.service";
-import {ActivatedRoute} from "@angular/router";
-import {Article} from "../../../model/Article";
+import {Component} from '@angular/core';
 import {CardService} from "../../../services/card.service";
 import {Card} from "../../../model/Card";
 

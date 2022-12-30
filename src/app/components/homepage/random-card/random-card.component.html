@@ -1,10 +1,10 @@
 
-<h2 id="helptool">You might like this!</h2>
+<h2>You might like this!</h2>
 
 <div class="container">
   <div class="row">
 
-      <button class="card" id="buttondetails" style="width: 12rem;" [routerLink]="['/buy-article', randomCard.id]" >
+      <button class="card" id="button-details" style="width: 12rem;" [routerLink]="['/buy-article', randomCard.id]" >
 
         <img *ngIf="randomCard?.image; else emptyImg" class="card-img-top" [src]="randomCard.image" style="width: 10.9em; height: 15em">
         <ng-template #emptyImg>

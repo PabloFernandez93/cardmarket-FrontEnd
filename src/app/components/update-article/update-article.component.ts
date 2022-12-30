@@ -5,7 +5,6 @@ import {ActivatedRoute} from "@angular/router";
 import {Article} from "../../model/Article";
 import {Condition} from "../../model/Condition";
 import {Language} from "../../model/Language";
-import {Card} from "../../model/Card";
 import {Location} from "@angular/common";
 
 @Component({
@@ -15,7 +14,8 @@ import {Location} from "@angular/common";
 })
 export class UpdateArticleComponent implements OnInit {
 
-  constructor(private articleService: ArticleService, private fb: FormBuilder, private route: ActivatedRoute, private location: Location) { }
+  constructor(private articleService: ArticleService, private fb: FormBuilder) {
+  }
 
   @Input()
   mySelectedArticle?: Article;
@@ -30,13 +30,11 @@ export class UpdateArticleComponent implements OnInit {
   });
 
   updateArticle() {
-    if(this.articleForm.invalid) return;
+    if (this.articleForm.invalid) return;
 
     const articleBackend: Article = {
       ...this.mySelectedArticle,
       ...this.articleForm.value,
-      // card: this.mySelectedArticle?.card,
-      // id: this.mySelectedArticle?.id
     }
 
     console.log(articleBackend)

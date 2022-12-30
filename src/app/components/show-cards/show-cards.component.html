@@ -1,29 +1,32 @@
+<div class="custom">
 
-<input id="cardSearch" class="form-control me-2" type="text" placeholder="Search Card" aria-label="Search" [(ngModel)]="filter">
+  <input id="cardSearch" class="form-control me-2" type="text" placeholder="Search Card" aria-label="Search"
+         [(ngModel)]="filter">
 
-<p id="helptool">Click on a card for further actions</p>
+  <p id="helptool">Click on a card for further actions</p>
 
-<div class="container">
-  <div class="row">
+  <div class="container">
 
-    <div class="col-sm" *ngFor="let card of filterCards(cardList)">
-      <button class="card" id="buttondetails" style="width: 12rem;" [routerLink]="['/buy-article', card.id]" >
+    <div class="d-flex flex-wrap">
+      <div class="p-2" *ngFor="let card of filterCards(cardList)">
+        <button class="card" id="buttondetails" style="width: 12rem;" [routerLink]="['/buy-article', card.id]">
 
-        <img class="card-img-top" src="..." alt="Card image cap" [src]="card.image">
-        <div class="card-body">
-          <h5 class="card-title">{{card.name}}</h5>
-          <p class="card-text">Set-No.: {{card.serialNumber}}</p>
-          <p class="card-text">Type: {{card.type}}</p>
-          <p class="card-text">Rarity: {{card.rarity}}</p>
-          <p class="card-text">Set: {{card.cardSet}}</p>
-          <p class="card-text">Availability: <b>{{card.availability}}</b></p>
-        </div>
+          <img class="card-img-top col-sm" alt="Card image cap" [src]="card.image"
+               style="width: 10.9em; height: 15em">
+          <div class="card-body">
+            <h5 class="card-title">{{card.name}}</h5>
+            <p class="card-text">Set-No.: {{card.serialNumber}}</p>
+            <p class="card-text">Type: {{card.type}}</p>
+            <p class="card-text">Rarity: {{card.rarity}}</p>
+            <p class="card-text">Set: {{card.cardSet}}</p>
+            <p class="card-text">Availability: <b>{{card.availability}}</b></p>
+          </div>
 
-      </button>
+        </button>
+      </div>
     </div>
   </div>
 </div>
-
 
 
 <!--  <div class="modal fade" id="updateArticleModal" tabindex="-1" aria-labelledby="updateArticleModalLabel" aria-hidden="true">-->

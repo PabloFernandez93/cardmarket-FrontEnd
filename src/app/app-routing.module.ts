@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {PostArticleComponent} from "./components/post-article/post-article.component";
 import {ShowArticlesComponent} from "./components/show-articles/show-articles.component";
 import {ErrorPageComponent} from "./components/error-page/error-page.component";
@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: "article-details/:id", component: ArticleDetailsComponent},
   {path: "show-cards", component: ShowCardsComponent},
   {path: "buy-article/:id", component: BuyArticleComponent},
-  {path: "**", component: ErrorPageComponent },
+  {path: "**", component: ErrorPageComponent},
 
 ];
 
@@ -25,4 +25,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

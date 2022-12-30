@@ -13,18 +13,18 @@
 
     <div class="col-md-6 mb-3">
       <label>Condition: </label>
-      <select formControlName="condition">
+      <select class="form-select" formControlName="condition">
         <option *ngFor="let condition of conditionEnum | keyvalue" [value]="condition.key">{{condition.value}}</option>
       </select>
     </div>
 
     <div class="col-md-6 mb-3">
       <label>Language: </label>
-      <select formControlName="language">
+      <select class="form-select" formControlName="language">
         <option *ngFor="let language of languageEnum | keyvalue" [value]="language.key">{{language.value}}</option>
       </select>
     </div>
 
-  <button type="submit" class="btn btn-success" [disabled]="articleForm.invalid" >Update</button>
+    <button type="submit" class="btn btn-success" [disabled]="articleForm.invalid">Update</button>
   </div>
 </form>

@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {Form, FormArray, FormBuilder, FormControl, FormGroup, Validator, Validators} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ArticleService} from "../../services/article.service";
 import {Article} from "../../model/Article";
-import {ActivatedRoute} from "@angular/router";
 import {Language} from "../../model/Language";
-import {LiteralArray} from "@angular/compiler";
 import {Condition} from "../../model/Condition";
 import {CardService} from "../../services/card.service";
 import {Card} from "../../model/Card";
@@ -26,7 +24,8 @@ export class PostArticleComponent implements OnInit {
     language: [Language.ENGLISH, [Validators.required]],
   });
 
-  constructor(private cardService: CardService, private articleService: ArticleService, private fb: FormBuilder, private route: ActivatedRoute) { }
+  constructor(private cardService: CardService, private articleService: ArticleService, private fb: FormBuilder) {
+  }
 
   ngOnInit(): void {
     this.cardService.getAllCards().subscribe(cards => this.cards = cards)
@@ -37,7 +36,7 @@ export class PostArticleComponent implements OnInit {
   }
 
   submitArticle() {
-    if(this.articleForm.invalid) return;
+    if (this.articleForm.invalid) return;
 
     const articleBackend: Article = {
       ...this.articleForm.value,

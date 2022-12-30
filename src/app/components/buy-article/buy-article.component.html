@@ -8,23 +8,22 @@
 <div class="custom">
 
   <div class="container">
-    <div class="d-flex flex-row">
 
-      <div class="d-flex flex-wrap">
-        <div class="p-2" *ngFor="let article of articleList" style="width: 12rem;">
+    <div class="d-flex flex-wrap">
+      <div class="p-2" *ngFor="let article of articleList" style="width: 12rem;">
 
-          <img class="card-img-top col-sm" src="..." alt="Card image cap" [src]="article.card.image"
-               style="width: 10.9em; height: 15em">
-          <div class="card-body">
-            <h5 class="card-title">{{article.card.name}}</h5>
-            <p class="card-text">Type: {{article.card.type}}</p>
-            <p class="card-text">Price: {{article.price | currency:'EUR':'symbol'}}</p>
-            <p class="card-text">Condition: {{article.condition}}</p>
-            <button (click)="buyArticle(article.id, article.card.name)" class="btn btn-success">Buy Article</button>
-          </div>
+        <img class="card-img-top col-sm" alt="Card image cap" [src]="article.card.image"
+             style="width: 10.9em; height: 15em">
+        <div class="card-body">
+          <h5 class="card-title">{{article.card.name}}</h5>
+          <p class="card-text">Type: {{article.card.type}}</p>
+          <p class="card-text">Price: {{article.price | currency:'EUR':'symbol'}}</p>
+          <p class="card-text">Condition: {{article.condition}}</p>
+          <button (click)="buyArticle(article.id, article.card.name)" class="btn btn-success">Buy Article</button>
         </div>
       </div>
     </div>
   </div>
+
 
 </div>

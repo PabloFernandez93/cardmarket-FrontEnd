@@ -26,7 +26,7 @@ export class BuyArticleComponent implements OnInit {
   buyArticle(id: number, name: string) {
     this.articleService.deleteArticleById(id).subscribe(val => {
       alert("Congratulations! You bought " + name.toUpperCase() + "!");
-      window.location.assign('http://localhost:4200/show-cards')
+      this.location.back()
     });
   }
 

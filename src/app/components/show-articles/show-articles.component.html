@@ -1,42 +1,34 @@
-<input class="form-control me-2" type="text" placeholder="Search an Article" aria-label="Search"
-       [(ngModel)]="filter">
+<div class="custom">
 
-<!--<div *ngFor="let article of articleList">-->
-<!--  <h4>Article:</h4>-->
-<!--  <li >-->
-<!--    <ul>Price:{{article.price}} </ul>-->
-<!--    <ul>Condition: {{article.condition}} </ul>-->
-<!--    <ul>Language:{{article.language}}</ul>-->
-<!--    <ul>Card Id: {{article.card.id}}</ul>-->
-<!--  </li>-->
-<!--</div>-->
+  <input class="form-control me-2" type="text" placeholder="Search an Article" aria-label="Search"
+         [(ngModel)]="filter">
 
-<!--  </div>-->
-<!--</div>-->
-<p id="helptool">Click on an article for further actions</p>
+  <p id="helptool">Click on an article for further actions</p>
 
-<!--test-->
+  <div class="container">
 
-<div class="container" >
-  <div class="row">
+    <div class="d-flex flex-wrap">
+      <div class="p-2" *ngFor="let article of filterArticles(articleList)" style="width: 12rem;">
+        <button class="card" id="buttondetails" style="width: 12rem;" (click)="transferArticle(article)"
+                data-bs-toggle="modal" data-bs-target="#updateArticleModal">
 
-    <div class="col-sm" *ngFor="let article of filterArticles(articleList)" style="width: 12rem;">
-      <button class="card" id="buttondetails" style="width: 12rem;" (click)="transferArticle(article)"  data-bs-toggle="modal" data-bs-target="#updateArticleModal">
-
-        <img class="card-img-top" src="..." alt="Card image cap" [src]="article.card.image">
-        <div class="card-body">
-          <h5 class="card-title">{{article.card.name}}</h5>
-          <p class="card-text">Condition: {{article.condition}}</p>
-          <p class="card-text">Language: {{article.language}}</p>
-          <p class="card-text">Price: {{article.price | currency:'EUR':'symbol'}}</p>
-        </div>
-      </button>
+          <img class="card-img-top col-sm" alt="Card image cap" [src]="article.card.image"
+               style="width: 10.9em; height: 15em">
+          <div class="card-body">
+            <h5 class="card-title">{{article.card.name}}</h5>
+            <p class="card-text">Condition: {{article.condition}}</p>
+            <p class="card-text">Language: {{article.language}}</p>
+            <p class="card-text">Price: {{article.price | currency:'EUR':'symbol'}}</p>
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 </div>
 
 
-<div class="modal fade" id="updateArticleModal" tabindex="-1" aria-labelledby="updateArticleModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateArticleModal" tabindex="-1" aria-labelledby="updateArticleModalLabel"
+     aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-sm">
     <div class="modal-content">
       <div class="modal-header">

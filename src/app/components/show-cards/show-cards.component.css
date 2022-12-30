@@ -2,11 +2,9 @@
   border: none;
 }
 
-.container {
-  margin-bottom: 70px;
+.custom {
+  margin: 5em 5em 5em 5em;
 }
-
-
 
 #helptool {
   margin-left: 0.8em;
