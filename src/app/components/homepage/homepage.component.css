@@ -1,3 +1,16 @@
 .container {
   position: absolute;
 }
+
+.custom {
+  margin-bottom: 70px;
+  margin-left: 150px;
+}
+
+.custom-margin-between-elements {
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-left: 150px;
+}
