@@ -15,6 +15,10 @@ import { ArticleDetailsComponent } from './components/article-details/article-de
 import { ShowCardsComponent } from './components/show-cards/show-cards.component';
 import { BuyArticleComponent } from './components/buy-article/buy-article.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { CarouselComponent } from './components/homepage/carousel/carousel.component';
+import { PokenewsComponent } from './components/homepage/pokenews/pokenews.component';
+import {YouTubePlayerModule} from "@angular/youtube-player";
+import { YoutubeVideoComponent } from './components/homepage/youtube-video/youtube-video.component';
 
 
 @NgModule({
@@ -31,6 +35,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     ShowCardsComponent,
     BuyArticleComponent,
     NavBarComponent,
+    CarouselComponent,
+    PokenewsComponent,
+    YoutubeVideoComponent,
 
   ],
   imports: [
@@ -38,7 +45,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    YouTubePlayerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
