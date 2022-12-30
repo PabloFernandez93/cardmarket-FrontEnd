@@ -19,7 +19,7 @@ import { CarouselComponent } from './components/homepage/carousel/carousel.compo
 import { PokenewsComponent } from './components/homepage/pokenews/pokenews.component';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { YoutubeVideoComponent } from './components/homepage/youtube-video/youtube-video.component';
-import { RandomArticleComponent } from './components/homepage/random-article/random-article.component';
+import { RandomCardComponent } from './components/homepage/random-card/random-card.component';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { RandomArticleComponent } from './components/homepage/random-article/ran
     CarouselComponent,
     PokenewsComponent,
     YoutubeVideoComponent,
-    RandomArticleComponent,
+    RandomCardComponent,
 
   ],
   imports: [
