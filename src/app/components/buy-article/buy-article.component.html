@@ -1,11 +1,18 @@
 <!--<button (click)="showArticle()">Show Article</button>-->
 
+<div *ngIf="articleList.length == 0">
+  <img src="https://i.kym-cdn.com/entries/icons/original/000/027/475/Screen_Shot_2018-10-25_at_11.02.15_AM.png" style="width: 300px; height: 200px">
+  <p>OOPS! There are no articles yet of this card</p>
+  <button type="button" class="btn btn-info" (click)="goBack()">Back</button>
+</div>
+
 <div class="custom">
 
 <div class="container">
   <div class="row">
+
     <div class="col-sm" *ngFor="let article of articleList" style="width: 12rem;">
-        <p>No articles yet of this card</p>
+
         <img class="card-img-top" src="..." alt="Card image cap" [src]="article.card.image" style="width: 10.9em; height: 15em">
         <div class="card-body">
           <h5 class="card-title">{{article.card.name}}</h5>
@@ -19,6 +26,7 @@
 </div>
 
 </div>
+
 
 
 <!--<div *ngIf="selectedCard">-->

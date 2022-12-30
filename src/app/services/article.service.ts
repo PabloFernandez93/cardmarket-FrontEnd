@@ -16,10 +16,6 @@ export class ArticleService {
     return this.httpClient.get<Article[]>(this.baseUrl);
   }
 
-  getArticleById(id: number): Observable<Article> {
-    return this.httpClient.get<Article>(this.baseUrl + "/" + id)
-  }
-
   createArticle(article: Article): Observable<Article> {
     return this.httpClient.post<Article>(this.baseUrl, article)
   }

@@ -1,8 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ArticleService} from "../../services/article.service";
 import {Article} from "../../model/Article";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Card} from "../../model/Card";
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-buy-article',
@@ -13,7 +14,7 @@ export class BuyArticleComponent implements OnInit {
 
   articleList: Article[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService) {}
+  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService, private location: Location) {}
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get("id")
@@ -28,5 +29,9 @@ export class BuyArticleComponent implements OnInit {
       alert("Congratulations! You bought " + name.toUpperCase() + "!");
       window.location.assign('http://localhost:4200/show-cards')
     });
+  }
+
+  goBack() {
+    this.location.back()
   }
 }
