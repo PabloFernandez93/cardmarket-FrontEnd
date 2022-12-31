@@ -10,7 +10,7 @@ import {Card} from "../../../model/Card";
 export class RandomCardComponent {
 
   randomCard: Card = {
-    "id": 1,
+    "id": 0,
     "serialNumber": '',
     "name": '',
     "type": '',

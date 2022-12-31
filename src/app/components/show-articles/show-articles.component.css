@@ -17,4 +17,5 @@
 .flag-icon {
   width: 15%;
   height: 9%;
+  border: solid thin black;
 }
