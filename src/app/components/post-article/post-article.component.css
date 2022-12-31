@@ -1,11 +1,9 @@
 .custom {
   margin-bottom: 5em;
   margin-left: 5em;
-  margin-top: 1em;
+  margin-top: 5em;
 }
 
 .dropdown {
-  margin-left: 5em;
-  margin-right: auto;
-  margin-top: 5em;
+  margin-bottom: 1em;
 }

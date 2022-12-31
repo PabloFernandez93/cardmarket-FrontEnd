@@ -1,3 +1,15 @@
 #button-details {
   border: none;
 }
+
+.card-body {
+  /*margin-right: 1em;*/
+  /*margin-left: 0.5em;*/
+  /*margin-top: 1em;*/
+}
+
+.card-title {
+  font-size: 90%;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}

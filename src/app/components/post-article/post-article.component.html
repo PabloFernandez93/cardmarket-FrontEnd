@@ -1,3 +1,6 @@
+<div class="custom">
+<h1>Sell</h1>
+
 <div class="dropdown">
   <select class="custom-select">
     <option value="" disabled selected hidden>Choose your card...</option>
@@ -5,7 +8,7 @@
   </select>
 </div>
 
-<div *ngIf="mySelectedCard" class="custom">
+<div *ngIf="mySelectedCard">
 
   <img *ngIf="mySelectedCard?.image; else emptyImg" [src]="mySelectedCard.image" style="width: 10.9em; height: 15em">
   <ng-template #emptyImg>
@@ -44,4 +47,5 @@
 
     </div>
   </form>
+</div>
 </div>

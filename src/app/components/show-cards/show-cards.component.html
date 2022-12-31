@@ -1,45 +1,33 @@
 <div class="custom">
-
+  <h1>Buy</h1>
+  <br>
   <input id="cardSearch" class="form-control me-2" type="text" placeholder="Search Card" aria-label="Search"
          [(ngModel)]="filter">
-
-  <p id="helptool">Click on a card for further actions</p>
+  <br>
+  <p id="help-tool">*Click on a card to see all the available articles</p>
 
   <div class="container">
 
     <div class="d-flex flex-wrap">
       <div class="p-2" *ngFor="let card of filterCards(cardList)">
-        <button class="card" id="buttondetails" style="width: 12rem;" [routerLink]="['/buy-article', card.id]">
+
+        <div class="card-body">
+          <h6 class="card-title"><b>{{card.name}}</b></h6>
+        </div>
+        <button class="card" id="button-details" style="width: 12rem;" [routerLink]="['/buy-article', card.id]">
 
           <img class="card-img-top col-sm" alt="Card image cap" [src]="card.image"
                style="width: 10.9em; height: 15em">
-          <div class="card-body">
-            <h5 class="card-title">{{card.name}}</h5>
-            <p class="card-text">Set-No.: {{card.serialNumber}}</p>
-            <p class="card-text">Type: {{card.type}}</p>
-            <p class="card-text">Rarity: {{card.rarity}}</p>
-            <p class="card-text">Set: {{card.cardSet}}</p>
-            <p class="card-text">Availability: <b>{{card.availability}}</b></p>
-          </div>
-
         </button>
+        <div class="card-body">
+          <p class="card-text"><span class="d-flex justify-content-between"><i>Set-No.:</i>{{card.serialNumber}}</span></p>
+          <p class="card-text"><span class="d-flex justify-content-between"><i>Type:</i>{{card.type}}</span></p>
+          <p class="card-text"><span class="d-flex justify-content-between"><i>Rarity:</i>{{card.rarity}}</span></p>
+          <p class="card-text"><span class="d-flex justify-content-between"><i>Set:</i>{{card.cardSet}}</span></p>
+          <p class="card-text"><span class="d-flex justify-content-between"><i>Availability: </i><b>{{card.availability}}</b></span></p>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
-
-
-<!--  <div class="modal fade" id="updateArticleModal" tabindex="-1" aria-labelledby="updateArticleModalLabel" aria-hidden="true">-->
-<!--    <div class="modal-dialog">-->
-<!--      <div class="modal-content">-->
-<!--        <div class="modal-header">-->
-<!--          <h1 class="modal-title fs-5" id="updateArticleModalLabel">Pokemoncard-Details</h1>-->
-<!--          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--        </div>-->
-<!--        <div class="modal-body">-->
-<!--          <app-buy-article [selectedCardId]="placeholderCardId"></app-buy-article>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-
