@@ -1,11 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ArticleService} from "../../services/article.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ActivatedRoute} from "@angular/router";
 import {Article} from "../../model/Article";
 import {Condition} from "../../model/Condition";
 import {Language} from "../../model/Language";
-import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-update-article',

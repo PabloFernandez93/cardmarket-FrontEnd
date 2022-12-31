@@ -13,7 +13,7 @@
     <li *ngIf="transferredArticle.language == 'JAPANESE'" class="card-text">Language: <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4NCjxwYXRoIGZpbGw9IiNmZmYiIGQ9Im0wLDBoOTAwdjYwMGgtOTAweiIvPg0KPGNpcmNsZSBmaWxsPSIjYmUwMDI2IiBjeD0iNDUwIiBjeT0iMzAwIiByPSIxODAiLz4NCjwvc3ZnPg0K" alt="japan flag icon" class="flag-icon"></li>
     <br>
     <button type="button" id="edit-btn" class="btn btn-warning" (click)="openUpdateForm()" >Edit</button>
-    <button type="button" class="btn btn-danger" (click)="deleteArticle(transferredArticle.id)">Delete</button>
+    <button type="button" class="btn btn-danger" (click)="deleteArticle(transferredArticle.id, transferredArticle.card.name)">Delete</button>
   </ul>
 </div>
 
