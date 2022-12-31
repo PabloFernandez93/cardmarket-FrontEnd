@@ -9,7 +9,16 @@ import {Card} from "../../../model/Card";
 })
 export class RandomCardComponent {
 
-  randomCard!: Card;
+  randomCard: Card = {
+    "id": 1,
+    "serialNumber": '',
+    "name": '',
+    "type": '',
+    "availability": 0,
+    "cardSet": '',
+    "rarity": 0,
+    "image": ''
+  };
 
   constructor(private cardService: CardService) {
   }
