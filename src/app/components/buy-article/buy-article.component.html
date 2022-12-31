@@ -16,10 +16,11 @@
              style="width: 10.9em; height: 15em">
         <div class="card-body">
           <h5 class="card-title">{{article.card.name}}</h5>
+          <br>
           <p class="card-text">Type: {{article.card.type}}</p>
           <p class="card-text">Price: {{article.price | currency:'EUR':'symbol'}}</p>
           <p class="card-text">Condition: {{article.condition}}</p>
-          <button (click)="buyArticle(article.id, article.card.name)" class="btn btn-success">Buy Article</button>
+          <button (click)="buyArticle(article.id, article.card.name, article.price)" class="btn btn-success">Buy Article</button>
         </div>
       </div>
     </div>

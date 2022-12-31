@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, LOCALE_ID, Inject} from '@angular/core';
 import {ArticleService} from "../../services/article.service";
 import {Article} from "../../model/Article";
 import {ActivatedRoute} from "@angular/router";
-import { Location } from "@angular/common";
+import {formatCurrency, Location} from "@angular/common";
+
 
 @Component({
   selector: 'app-buy-article',
@@ -13,7 +14,8 @@ export class BuyArticleComponent implements OnInit {
 
   articleList: Article[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService, private location: Location) {}
+  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService, private location: Location, @Inject(LOCALE_ID) public locale: string) {
+  }
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get("id")
@@ -23,11 +25,13 @@ export class BuyArticleComponent implements OnInit {
     }
   }
 
-  buyArticle(id: number, name: string) {
-    this.articleService.deleteArticleById(id).subscribe(val => {
-      alert("Congratulations! You bought " + name.toUpperCase() + "!");
-      this.location.back()
-    });
+  buyArticle(id: number, name: string, price: number) {
+    if (window.confirm('Are sure you want to buy ' + name.toUpperCase() + ' for the price of ' + formatCurrency(price, this.locale, '€') + '?')) {
+      this.articleService.deleteArticleById(id).subscribe(val => {
+        alert("Congratulations! You bought " + name.toUpperCase() + "!");
+        this.location.back()
+      });
+    }
   }
 
   goBack() {
