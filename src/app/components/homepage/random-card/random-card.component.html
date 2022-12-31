@@ -1,12 +1,9 @@
 
-<h2>You might like this?</h2>
+
 
 <div class="container">
-  <div class="row">
 
-    <div class="card-body">
-      <h6 class="card-title"><b>{{randomCard.name}}</b></h6>
-    </div>
+  <h2>You might like this?</h2>
 
       <button class="card" id="button-details" style="width: 12rem;" [routerLink]="['/buy-article', randomCard.id]" >
 
@@ -14,7 +11,9 @@
         <ng-template #emptyImg>
           <img src="assets/empty-picture.jpg" style="width: 20em; height: 20em" class="rounded">
         </ng-template>
-        <div class="card-body">
+
+      </button>
+        <div class="card-body" id="card-text">
           <p class="card-text"><span class="d-flex justify-content-between"><i>Set-No.:</i>{{randomCard.serialNumber}}</span></p>
           <p class="card-text"><span class="d-flex justify-content-between"><i>Type:</i>{{randomCard.type}}</span></p>
           <p class="card-text"><span class="d-flex justify-content-between"><i>Rarity:</i>{{randomCard.rarity}}</span></p>
@@ -22,7 +21,6 @@
           <p class="card-text"><span class="d-flex justify-content-between"><i>Availability: </i><b>{{randomCard.availability}}</b></span></p>
         </div>
 
-      </button>
 
   </div>
-</div>
+

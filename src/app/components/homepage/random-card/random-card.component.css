@@ -1,5 +1,6 @@
 #button-details {
   border: none;
+  margin-top: 1.2em;
 }
 
 .card-body {
@@ -12,4 +13,17 @@
   font-size: 90%;
   margin-bottom: 1em;
   margin-left: 1em;
+}
+
+.card-text {
+  margin-right: 6em;
+  margin-left: 0.5em;
+}
+
+#card-text {
+  margin-top: 1em;
+}
+
+.container {
+  margin-top: 0.4em;
 }
