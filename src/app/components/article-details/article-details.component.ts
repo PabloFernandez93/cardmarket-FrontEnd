@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Article} from "../../model/Article";
 import {ActivatedRoute} from "@angular/router";
 import {ArticleService} from "../../services/article.service";
-import {formatCurrency} from "@angular/common";
 
 @Component({
   selector: 'app-article-details',

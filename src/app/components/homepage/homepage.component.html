@@ -1,39 +1,53 @@
-<div class="d-flex flex-column"><app-carousel></app-carousel></div>
+<div class="d-flex flex-column">
+  <app-carousel></app-carousel>
+</div>
+<div class="d-flex justify-content-around">
+  <img class="hello-pikachu" src="https://letstalkabouttaxnzdotcom.files.wordpress.com/2016/07/img_1664.png" alt="hello-pikachu-image">
 
-<div class="welcome-message">
+  <div class="welcome-message">
 
-  <p>
-  Welcome <span>Pokemon-Trader</span>  to PokeMarket! Here you can buy cards from other users or sell your own cards.
-    <br>
-    <br>
-    Since we are a startup company, our site is still under construction. Therefore we can only offer you the popular <span>Base Set</span> of the Pokemon Card Series at the moment.
-    <br>
-    <br>
-    We wish you a lot of fun!
-    <br>
-    <br>
-    <span>*FEEL FREE AND TRY NOW!*</span>
-    <br>
-    <br>
-    Your PokeMarket Team
-  </p>
+    <p>
+      Welcome <span>Pokemon-Trader</span> to PokeMarket! Here you can buy cards from other users or sell your own cards.
+      <br>
+      <br>
+      Since we are a startup company, our site is still under construction.
+      <br>
+      Therefore we can only offer you the popular
+      <span>Base Set</span> of the Pokemon Card Series at the moment.
+      <br>
+      <br>
+      We wish you a lot of fun!
+      <br>
+      <br>
+      <span>*FEEL FREE AND TRY NOW!*</span>
+      <br>
+      <br>
+      Your PokeMarket Team
+    </p>
+  </div>
 </div>
 <div class="custom">
   <div class="d-flex flex-row">
     <div class="p-2">
-    <div class="d-flex flex-column">
-      <div class="custom-margin-between-elements">
-      <div class="d-flex start"><app-pokenews></app-pokenews></div>
+      <div class="d-flex flex-column">
+        <div class="custom-margin-between-elements">
+          <div class="d-flex start">
+            <app-pokenews></app-pokenews>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-column-reverse">
+        <div class="d-flex justify-content-start">
+          <app-youtube-video></app-youtube-video>
+        </div>
       </div>
     </div>
-    <div class="d-flex flex-column-reverse">
-      <div class="d-flex justify-content-start"><app-youtube-video></app-youtube-video></div>
-    </div>
-    </div>
     <div class="p-2">
-  <div class="d-flex flex-column-reverse">
-    <div class="d-flex justify-content-start"><app-random-card></app-random-card></div>
-  </div>
+      <div class="d-flex flex-column-reverse">
+        <div class="d-flex justify-content-start">
+          <app-random-card></app-random-card>
+        </div>
+      </div>
     </div>
   </div>
 </div>
