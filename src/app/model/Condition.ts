@@ -1,11 +1,11 @@
 export enum Condition {
 
-  MINT,
-  NEAR_MINT,
-  EXCELLENT,
-  GOOD,
-  LIGHT_PLAYED,
-  PLAYED,
-  POOR,
-  CUSTOM
+  MINT = 'MINT',
+  NEAR_MINT = 'NEAR_MINT',
+  EXCELLENT = 'EXCELLENT',
+  GOOD = 'GOOD',
+  LIGHT_PLAYED = 'LIGHT_PLAYED',
+  PLAYED = 'PLAYED',
+  POOR = 'POOR',
+  CUSTOM = 'CUSTOM'
 }

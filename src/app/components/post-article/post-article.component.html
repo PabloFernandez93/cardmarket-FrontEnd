@@ -34,6 +34,7 @@
           <option *ngFor="let condition of conditionEnum | keyvalue"
                   [value]="condition.key">{{condition.value}}</option>
         </select>
+<!--        <i *ngIf="conditionControl?.touched>default: MINT)></i>-->
       </div>
 
       <div class="col-md-6 mb-3">
@@ -44,6 +45,8 @@
       </div>
 
       <button type="submit" class="btn btn-success" [disabled]="articleForm.invalid">Add</button>
+
+
 
     </div>
   </form>
