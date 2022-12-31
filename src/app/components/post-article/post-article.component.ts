@@ -45,7 +45,7 @@ export class PostArticleComponent implements OnInit {
 
     console.log(articleBackend)
     this.articleService.createArticle(articleBackend).subscribe(a => {
-      alert("Added Article " + articleBackend.card.name + " to your Cards");
+      alert("Added Article " + articleBackend.card.name.toUpperCase() + " to your Cards");
     })
   }
 
